@@ -1,0 +1,13 @@
+Add songs to the new soundboard
+Fix problem with interrupt library
+Test interrupt code with switches
+Confirm ability to ssh in remotely
+Add secondary motion to the web interface --Nina
+Add primary motion 50 milisecond delay --Nina
+Install 5V regulator to run whole system w/ single power supply
+Confirm that relay board an run 16 relays without drawing too much power
+Make a mounting board
+Get longer ribbon cable
+Master on/off switch
+Set rpi to run app.py on startup
+Current sense and confirmation of soundboard play

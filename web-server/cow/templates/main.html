@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+	<head>
+      <!-- Latest compiled and minified CSS -->
+	     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		    <!-- Optional theme -->
+			   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+			      <!-- Latest compiled and minified JavaScript -->
+				     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	</head>
+	<form action="/set" method="post">
+		<table>
+		<tr>
+		<!-- Column Headings -->
+			<th>Time</th>
+			<th>Song</th>
+			{% for relay in relays %}
+				<th>{{relay}}</th>
+			{% endfor %}
+		</tr>
+		{% for i in range(0,n) %}
+			<tr>
+				<td>
+				<!-- Time Input -->
+					<input autocomplete="off" autofocus class="form-control" size="6" name={{"time" ~ i}} type="text" value="{{values[i][0]}}"/>
+				</td>
+				<td>
+				<!-- Song Input -->
+					<select autocomplete="off" name={{"song" ~ i}} type="text" value="{{values[i][1]}}"/>
+					<option value="default">Song</option>
+					<option value="1">Song1</option>
+					<option value="2">Song2</option>
+					</select>
+				</td>
+				<!-- Relay Input -->
+				{% for relayValue in values[i][2] %}
+					<td>
+					{% if relayValue == 1 %}
+						<input autocomplete="off" autofocus class="form-control" name={{relays[loop.index] ~ i}} type="checkbox" checked/>
+					{% else %}
+						<input autocomplete="off" autofocus class="form-control" name={{relays[loop.index] ~ i}} type="checkbox"/>
+					{% endif %}
+						</td>					
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+
+		<button type="submit" name="submit" value="play">Play</button>
+		<button type="submit" name="submit" value="addRow">Add Row</button>
+		<select name="saveAs">
+			<option value="default">Save as</option>
+			<option value="1">Sequence 1</option>
+			<option value="2">Sequence 2</option>
+			<option value="3">Sequence 3</option>
+			<option value="4">Sequence 4</option>
+			<option value="5">Sequence 5</option>
+		</select>
+		<button type="submit" name="submit" value="save">Save</button>
+		<select name="openAs">
+			<option value="default">Open</option>
+			<option value="1">Sequence 1</option>
+			<option value="2">Sequence 2</option>
+			<option value="3">Sequence 3</option>
+			<option value="4">Sequence 4</option>
+			<option value="5">Sequence 5</option>
+		</select>
+		<button type="submit" name="submit" value="open">Open</button>
+	</form>
+</html>
