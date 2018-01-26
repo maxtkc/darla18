@@ -10,11 +10,46 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~MSle0~/digital
+
 # Command Line History (newest to oldest):
+:wq
+|2,0,1516845893,,"wq"
+:w
+|2,0,1516844897,,"w"
 :q
-|2,0,1516761176,,"q"
+|2,0,1516844753,,"q"
+:make upload
+|2,0,1516844684,,"make upload"
+:q!
+|2,0,1516843379,,"q!"
+:set number
+|2,0,1516843010,,"set number"
+:!
+|2,0,1516842953,,"!"
+:sp ../blink/Makefile
+|2,0,1516842853,,"sp ../blink/Makefile"
+:sp Makefile
+|2,0,1516840117,,"sp Makefile"
 
 # Search String History (newest to oldest):
+?//
+|2,1,1516843996,47,"/"
+?/digital
+|2,1,1516843788,47,"digital"
+?/inter
+|2,1,1516843090,47,"inter"
+?/avrdude
+|2,1,1516840921,47,"avrdude"
+??AVR_TOOLS
+|2,1,1516840910,63,"AVR_TOOLS"
+?/AVR_TOOLS
+|2,1,1516840903,47,"AVR_TOOLS"
+?/Common
+|2,1,1516839697,47,"Common"
+?/common
+|2,1,1516839683,47,"common"
 
 # Expression History (newest to oldest):
 
@@ -23,22 +58,352 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
+"0	LINE	0
+					mcp.writeGPIOAB(~scroll[row][RELAY]);	
+|3,0,0,1,1,0,1516844082,"				mcp.writeGPIOAB(~scroll[row][RELAY]);	"
+"1	LINE	0
+	ARDUINO_LIBS 	=
+|3,0,1,1,1,0,1516840215,"ARDUINO_LIBS 	="
+""-	CHAR	0
+			
+|3,1,36,0,1,0,1516844894,"		"
 
 # File marks:
-'0  1  0  ~/sudo
-|4,48,1,0,1516761176,"~/sudo"
-'1  1  0  /etc/wpa_supplicant/wpa_supplicant.conf
-|4,49,1,0,1516758258,"/etc/wpa_supplicant/wpa_supplicant.conf"
+'0  118  17  ~/sketchbook/darla/darla.ino
+|4,48,118,17,1516845893,"~/sketchbook/darla/darla.ino"
+'1  1  0  ~/documentation/usefullBashCommands.txt
+|4,49,1,0,1516844753,"~/documentation/usefullBashCommands.txt"
+'2  125  1  ~/sketchbook/darla/darla.ino
+|4,50,125,1,1516844727,"~/sketchbook/darla/darla.ino"
+'3  125  1  ~/sketchbook/darla/darla.ino
+|4,51,125,1,1516844727,"~/sketchbook/darla/darla.ino"
+'4  131  2  ~/sketchbook/darla/darla.ino
+|4,52,131,2,1516844560,"~/sketchbook/darla/darla.ino"
+'5  130  2  ~/sketchbook/darla/darla.ino
+|4,53,130,2,1516844560,"~/sketchbook/darla/darla.ino"
+'6  131  2  ~/sketchbook/darla/darla.ino
+|4,54,131,2,1516844560,"~/sketchbook/darla/darla.ino"
+'7  130  2  ~/sketchbook/darla/darla.ino
+|4,55,130,2,1516844560,"~/sketchbook/darla/darla.ino"
+'8  96  0  ~/sketchbook/darla/darla.ino
+|4,56,96,0,1516844319,"~/sketchbook/darla/darla.ino"
+'9  96  0  ~/sketchbook/darla/darla.ino
+|4,57,96,0,1516844319,"~/sketchbook/darla/darla.ino"
 
 # Jumplist (newest first):
--'  1  0  ~/sudo
-|4,39,1,0,1516761176,"~/sudo"
--'  1  0  /etc/wpa_supplicant/wpa_supplicant.conf
-|4,39,1,0,1516758258,"/etc/wpa_supplicant/wpa_supplicant.conf"
--'  1  0  /etc/wpa_supplicant/wpa_supplicant.conf
-|4,39,1,0,1516758258,"/etc/wpa_supplicant/wpa_supplicant.conf"
+-'  118  17  ~/sketchbook/darla/darla.ino
+|4,39,118,17,1516845893,"~/sketchbook/darla/darla.ino"
+-'  125  1  ~/sketchbook/darla/darla.ino
+|4,39,125,1,1516844837,"~/sketchbook/darla/darla.ino"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1516844753,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1516844753,"~/documentation/usefullBashCommands.txt"
+-'  125  1  ~/sketchbook/darla/darla.ino
+|4,39,125,1,1516844727,"~/sketchbook/darla/darla.ino"
+-'  125  1  ~/sketchbook/darla/darla.ino
+|4,39,125,1,1516844727,"~/sketchbook/darla/darla.ino"
+-'  131  2  ~/sketchbook/darla/darla.ino
+|4,39,131,2,1516844596,"~/sketchbook/darla/darla.ino"
+-'  131  2  ~/sketchbook/darla/darla.ino
+|4,39,131,2,1516844596,"~/sketchbook/darla/darla.ino"
+-'  131  2  ~/sketchbook/darla/darla.ino
+|4,39,131,2,1516844596,"~/sketchbook/darla/darla.ino"
+-'  130  2  ~/sketchbook/darla/darla.ino
+|4,39,130,2,1516844560,"~/sketchbook/darla/darla.ino"
+-'  130  2  ~/sketchbook/darla/darla.ino
+|4,39,130,2,1516844560,"~/sketchbook/darla/darla.ino"
+-'  130  2  ~/sketchbook/darla/darla.ino
+|4,39,130,2,1516844560,"~/sketchbook/darla/darla.ino"
+-'  124  19  ~/sketchbook/darla/darla.ino
+|4,39,124,19,1516844544,"~/sketchbook/darla/darla.ino"
+-'  124  19  ~/sketchbook/darla/darla.ino
+|4,39,124,19,1516844544,"~/sketchbook/darla/darla.ino"
+-'  124  19  ~/sketchbook/darla/darla.ino
+|4,39,124,19,1516844544,"~/sketchbook/darla/darla.ino"
+-'  124  19  ~/sketchbook/darla/darla.ino
+|4,39,124,19,1516844544,"~/sketchbook/darla/darla.ino"
+-'  124  19  ~/sketchbook/darla/darla.ino
+|4,39,124,19,1516844544,"~/sketchbook/darla/darla.ino"
+-'  96  0  ~/sketchbook/darla/darla.ino
+|4,39,96,0,1516844435,"~/sketchbook/darla/darla.ino"
+-'  96  0  ~/sketchbook/darla/darla.ino
+|4,39,96,0,1516844435,"~/sketchbook/darla/darla.ino"
+-'  96  0  ~/sketchbook/darla/darla.ino
+|4,39,96,0,1516844435,"~/sketchbook/darla/darla.ino"
+-'  96  0  ~/sketchbook/darla/darla.ino
+|4,39,96,0,1516844435,"~/sketchbook/darla/darla.ino"
+-'  96  0  ~/sketchbook/darla/darla.ino
+|4,39,96,0,1516844435,"~/sketchbook/darla/darla.ino"
+-'  96  0  ~/sketchbook/darla/darla.ino
+|4,39,96,0,1516844319,"~/sketchbook/darla/darla.ino"
+-'  96  0  ~/sketchbook/darla/darla.ino
+|4,39,96,0,1516844319,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844153,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844153,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844153,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844153,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844153,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844153,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844153,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844127,"~/sketchbook/darla/darla.ino"
+-'  123  10  ~/sketchbook/darla/darla.ino
+|4,39,123,10,1516844127,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  119  0  ~/sketchbook/darla/darla.ino
+|4,39,119,0,1516843996,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  120  1  ~/sketchbook/darla/darla.ino
+|4,39,120,1,1516843971,"~/sketchbook/darla/darla.ino"
+-'  119  1  ~/sketchbook/darla/darla.ino
+|4,39,119,1,1516843952,"~/sketchbook/darla/darla.ino"
+-'  119  1  ~/sketchbook/darla/darla.ino
+|4,39,119,1,1516843952,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  6  0  ~/sketchbook/darla/darla.ino
+|4,39,6,0,1516843933,"~/sketchbook/darla/darla.ino"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
+-'  58  8  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+|4,39,58,8,1516843798,"/usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h"
 
 # History of marks within files (newest to oldest):
+
+> ~/sketchbook/darla/darla.ino
+	*	1516844998	0
+	"	118	17
+	^	30	14
+	.	30	13
+	+	119	1
+	+	120	1
+	+	119	0
+	+	117	0
+	+	118	17
+	+	69	22
+	+	70	3
+	+	71	2
+	+	72	2
+	+	73	2
+	+	74	2
+	+	75	3
+	+	76	3
+	+	124	18
+	+	126	9
+	+	123	10
+	+	124	2
+	+	125	15
+	+	36	12
+	+	37	12
+	+	30	13
+
+> ~/documentation/usefullBashCommands.txt
+	*	1516844746	0
+	"	1	0
+
+> /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+	*	1516843796	0
+	"	58	8
+
+> /usr/share/arduino/Arduino.mk
+	*	1516843094	0
+	"	1538	4
+
+> ~/sketchbook/darla/Makefile
+	*	1516842963	0
+	"	7	17
+	^	7	18
+	.	7	17
+	+	2	26
+	+	5	29
+	+	1	13
+	+	2	13
+	+	3	0
+	+	4	13
+	+	3	13
+	+	7	17
+
+> ~/sketchbook/darla/m
+	*	1516842954	0
+	"	1	0
+
+> ~/sketchbook/blink/Makefile
+	*	1516842937	0
+	"	2	27
+	^	2	24
+	.	2	0
+	+	2	27
+	+	8	0
+	+	4	10
+	+	1	14
+	+	2	13
+	+	3	13
+	+	4	30
+	+	3	0
+	+	5	19
+	+	6	13
+	+	7	0
+	+	8	0
+	+	5	0
+	+	2	0
+
+> ~/sketchbook/serTest/serTest.ino
+	*	1516842722	0
+	"	1	0
+
+> ~/sketchbook/menucommands/menucommands.ino
+	*	1516842701	0
+	"	1	0
+
+> ~/sketchbook/darla4/darla4.ino
+	*	1516842348	0
+	"	1	0
+
+> ~/sketchbook/blink/blink.ino
+	*	1516842270	0
+	"	9	8
+	.	9	8
+	+	7	8
+	+	9	8
+
+> ~/sketchbook/Arduino.mk
+	*	1516840921	0
+	"	363	56
+
+> ~/sketchbook/darla4/Makefile
+	*	1516840509	0
+	"	1	0
+
+> ~/documentation/todo.txt
+	*	1516762677	0
+	"	15	244
+	^	15	245
+	.	15	245
+	+	15	245
 
 > ~/sudo
 	*	1516761171	0

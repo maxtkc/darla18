@@ -1,8 +1,7 @@
 BOARD_TAG    	= uno
 ARDUINO_PORT 	= /dev/ttyUSB0
+ARDUINO_LIBS 	=
 ARDUINO_DIR  	= /usr/share/arduino
-ADRMK_DIR 	= /usr/share/arduino	
-#AVR_TOOLS_DIR	= /usr
-ARDUINO_LIBS	=
+ADRMK_DIR	= /usr/share/arduino
 
 include /usr/share/arduino/Arduino.mk

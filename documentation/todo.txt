@@ -11,3 +11,5 @@ Get longer ribbon cable
 Master on/off switch
 Set rpi to run app.py on startup
 Current sense and confirmation of soundboard play
+
+EVERYTHING SHOULD WORK EXCEPT WE NEED TO PULL THE LIBRARIES AGAIN... MY BAD ): TO SAVE THEM TO GIT WE HAVE TO GET RID OF THEIR .GIT AND .GITHUB FOLDERS SO THAT GIT WILL ALLOW US TO PUSH THEM (IF WE DON'T, GIT MAKES A LINK TO THEM... NOT HELPFUL)
