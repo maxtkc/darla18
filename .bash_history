@@ -359,3 +359,125 @@ ls
 cd
 sudo su
 exit
+clear
+ls
+ls -a
+git status
+cd ..
+ls
+cd pi/
+ls
+ls -a
+ls -la
+ls
+git add --all
+git commit -m"Dad made changes, got rid of some darla folders"
+git push -u origin master
+git status
+ls
+cd sketchbook/libraries/
+ls
+ls Adafruit_MCP23017/ -a
+rm -rf */.g*
+ls -a
+ls Adafruit_MCP23017/ -a
+cd
+git add --all
+git commit -m"Got rid of libraries .git and .github files -- link is gone"
+git push -u origin master
+ls sketchbook/libraries/*/*
+ls sketchbook/libraries/*/* -a
+exit
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+cd
+screen
+exit
+w3m google.com
+sudo apt-get install w3m
+ls
+w3m google.com
+sudo apt-get install sox
+sudo apt-get update
+sudo apt-get upgrade
+ls
+cd soundfiles/
+ls
+cd ..
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi  darla.ino 
+cd
+la
+vi .vimrc 
+cd sketchbook/darla/
+ls
+vi darla.ino 
+vi ~/.vimrc 
+vi darla.ino 
+make upload
+ls
+vi Makefile 
+ls /dev/tty*
+screen /dev/ttyUSB0
+exit
+ls
+echo "S" /dev/ttyUSB0 
+exit
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+make upload
+vi darla.ino 
+make upload
+ls -l /dev/disk/by-uuid/
+ls /dev/
+echo S > /dev/ttyUSB0 
+ls -l /dev/disk/by-uuid/
+echo S > /dev/ttyUSB0 
+ls -l /dev/disk/by-uuid/
+echo S > /dev/ttyUSB0 
+ls -l /dev/disk/by-uuid/
+ls /dev/sda*
+ls -l /dev/disk/by-uuid/
+sudo mkdir /media/usb
+sudo chown -R pi:pi /media/usb
+sudo mount /dev/sda /media/usb -o uid=pi,gid=pi
+cd /media/usb/
+ls
+rm T00.ogg 
+cd
+ls
+cd soundfiles/
+ls
+cp *.ogg /media/usb
+ls /media/usb/
+sudo vi /etc/fstab 
+umount /media/usb 
+exit
+echo 'S' /dev/ttyUSB0 
+history |grep echo
+screen /dev/ttyUSB0
+echo S > /dev/ttyUSB0 
+ls -l /dev/disk/by-uuid/
+vi documentation/tools.txt
+exit
+ls
+la
+vi .bashrc 
+source .bashrc 
+la
+vi .screenrc 
+screen
+ls
+screen
+sudo reboot

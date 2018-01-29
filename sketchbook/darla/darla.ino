@@ -67,13 +67,13 @@ String inString = "";
 uint16_t scroll[ROWS][COLS]; 
 
 char songs[12][12] = {	"LOONY   OGG",
-			"BYARD   OGG", 
-			"CRACK   OGG",
-			"ICED    OGG",
-			"LONE    OGG",
-			"MLING   OGG",
-			"MTC     OGG",
-			"NEWMC   OGG"
+						"BYARD   OGG", 
+						"CRACK   OGG",
+						"ICEC    OGG",
+						"LONE    OGG",
+						"MLING   OGG",
+						"MTC     OGG",
+						"NEWMC   OGG"
 };
 
 void mcp_init() {
@@ -94,38 +94,6 @@ void outstop() {
 	analogWrite(MOTOR_PWM, 0);
 }
 
-void setup() {
-  	ss.begin(9600); // Start software serial for soundboard
-	Serial.begin(9600); // Hardware serial for rpi
-
-	pinMode(13, OUTPUT); // Initialize indicator light
-	digitalWrite(13, LOW);
-
-	// Relay control init
-	mcp_init(); 
-
-	// Soundboard init
-  	if (!sfx.reset()) {
-		state = ERROR;
-	}
-
-	// Motor init
-	pinMode(MOTOR_PWM, OUTPUT);
-	pinMode(MOTOR_INA, OUTPUT);
-	pinMode(MOTOR_INB, OUTPUT);
-
-	// Sled interupt
-//SHOULD FIX THIS 
-//	attachInterrupt(digitalPinToInterrupt(OUTSTOP), outstop, LOW);
-//	attachInterrupt(digitalPinToInterrupt(INSTOP), instop, LOW);
-
-	state = IDLE;
-//TEST CODE
-	//mcp.writeGPIOAB(~2);
-	sfx.playTrack(1);
-	while(1);
-}
-
 // song number or STOP for no song
 void playMusic(uint16_t song_number) {
 	if(song_number != STOP)	sfx.playTrack(songs[song_number]);
@@ -138,6 +106,42 @@ void secondaryMotion(uint16_t sled) {
 	analogWrite(MOTOR_PWM, MOTOR_SPD);
 }
 
+void setup() {
+  	ss.begin(9600); // Start software serial for soundboard
+	Serial.begin(9600); // Hardware serial for RPI
+
+	pinMode(13, OUTPUT); // Initialize indicator light
+	digitalWrite(13, LOW);
+
+	// Relay control init
+	mcp_init(); 
+
+	state = IDLE;
+
+	// Soundboard init
+  	if (!sfx.reset()) {
+		state = ERROR;
+		Serial.println("ERROR");
+	}
+
+	// Motor init
+	pinMode(MOTOR_PWM, OUTPUT);
+	pinMode(MOTOR_INA, OUTPUT);
+	pinMode(MOTOR_INB, OUTPUT);
+
+	// Sled interupt
+//SHOULD FIX THIS  DOES NOT COMPILE
+//	attachInterrupt(digitalPinToInterrupt(OUTSTOP), outstop, LOW);
+//	attachInterrupt(digitalPinToInterrupt(INSTOP), instop, LOW);
+
+	Serial.println(state);
+
+//TEST CODE
+//	sfx.playTrack(songs[3]);
+//	mcp.writeGPIOAB(~0x0000);
+	secondaryMotion(STOP);
+	while(1);
+}
 
 void loop() {
 	switch(state) {
@@ -146,9 +150,11 @@ void loop() {
 				char inChar = Serial.read(); 
 				if (inChar == 'S') {
 					state = READ;
+					Serial.println("READ");
 				}
 				else if (inChar == 'D') {
 					state = DRIVE;
+					Serial.println("DRIVE");
 				}
 			}
 			break;
@@ -162,6 +168,7 @@ void loop() {
 				if (++row >= lastRow) {
 					row = 0;
 					state = IDLE;
+					Serial.println("IDLE");
 				}
 			}
 			break;
@@ -181,9 +188,11 @@ void loop() {
 					lastRow = row;
 					row = 0;
 					state = PLAY;
+					Serial.println("PLAY");
 				}
 				else {
 					state = ERROR;
+					Serial.println("ERROR");
 				}
 				if (col >= COLS){
 					row++;
@@ -192,12 +201,20 @@ void loop() {
 			}
 			break;
 		case DRIVE:
+			//This is the recommended way to initialize
+			//digitalWrite(reset_pin, LOW);
+			//pinMode(reset_pin, OUTPUT);
+			//delay(10);
+			//pinMode(reset_pin, INPUT);
+			//delay(1000); // give a bit of time to 'boot up'
+
 			//Initialize FX board for use as drive
 			digitalWrite(SFX_RST, LOW);
 			digitalWrite(SFX_RST, HIGH);
 			state = IDLE;
+			Serial.println("IDLE");
 		case ERROR:
-			Serial.println('$');
+			//Serial.println('$');
 			digitalWrite(13, HIGH);
 			break;
 	}
