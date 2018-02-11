@@ -90,6 +90,7 @@ fi
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
+alias startcow='sudo python ~/web-server/cow/app.py'
 #alias l='ls -CF'
 
 # Alias definitions.

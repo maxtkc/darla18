@@ -481,3 +481,378 @@ screen
 ls
 screen
 sudo reboot
+vi documentation/tools.txt 
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+la
+cd ..
+ls
+la
+cd ..
+ls
+la
+git add --all
+git commit
+git push -u origin master
+exit
+arduino-mk -v
+arduino -v
+make -v
+exit
+ls
+cd documentation/
+ls
+vi tools.txt 
+exit
+ls
+cd soundfiles/
+ls
+exit
+ls -l /dev/disk/by_uuid/
+ls -l /dev/disk/by-uuid/
+ls /media/usb/
+sudo umount /media/usb 
+screen
+sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+ifconfig
+exit
+ls
+cd serialbook/
+ls
+cd ../web-server/
+ls
+cd cow/
+ls
+python2 app.py
+sudo apt-get install python-virtualenv
+ls
+vim app.py 
+pip install flask
+pip3 install flask
+sudo apt-get install python-pip
+pip install flask
+python app.py 
+sudo python app.py
+sudo python3 app.py 
+sudo python2 app.py 
+python app.py 
+sudo app.py
+sudo python app.py
+ls
+vi app.py 
+pip install pyserial
+sudo python3 app.py
+python -m pip install pyserial
+sudo python3 app.py
+cd
+cd ..
+ls
+cd ..
+ls
+cd lib/
+ls
+cd ..
+find . -type d -name "Python*" -print
+sudo find . -type d -name "Python*" -print
+sudo find . -type d -name "Python" -print
+sudo find . -type d -name "python*" -print
+help('modules')
+python help('modules')
+python
+cd
+cd web-server/
+ls
+cd cow/
+sudo python3 app.py 
+python3
+python3 -m pip install pyserial
+python -m pip install pyserial
+python3
+python
+alias python=python3
+python --version
+python -m pip install pyserial
+sudo apt-get install python3-pip
+python -m pip install pyserial
+python3
+python app.py 
+python3 app.py 
+python3
+python2
+python2 app.py
+sudo python2 app.py 
+python2
+pip3 install flask
+python3 app.py 
+sudo python3 app.py 
+python3
+vim app.py 
+sudo python3 app.py 
+reboot
+sudo reboot
+cd web-server/cow/
+sudo python3 app.py 
+sudo python2 app.py 
+python2
+sudo apt-get install python-serial
+cd
+cd web-server/cow
+ls
+vim app.py 
+sudo apt-get remove python2.7
+sudo apt-get autoremove
+sudo python3 app.py 
+pip3 install serial
+sudo python3 app.py 
+python3
+vi app.py 
+sudo python3 app.py 
+python3 -m pip install serial
+python3 -m pip install pyserial
+vi app.py 
+python3 app.py 
+sudo python3 app.py 
+python3 -v
+python3 -v | grep serial
+cd /usr/lib/python
+cd /usr/lib/
+ls
+cd python3.5
+ls
+find serial*
+find . serial
+grep serial
+ls
+cd __pycache__/
+ls
+grep serial
+echo $PYTHONPATH
+cd ..
+ls
+python3
+vim ptest.py
+ls
+ls /home/pi/.local/lib/python3.5/site-packages/
+vim ~/web-server/cow/ptest.py
+python3 ~/web-server/cow/ptest.py 
+vim ~/web-server/cow/app.py
+python3 ~/web-server/cow/app.py 
+vim ~/web-server/cow/app.py
+python3 ~/web-server/cow/app.py 
+sudo apt-get purge python3.5
+sudo apt-get purge python2.7
+sudo apt-get purge python2
+pip uninstall pip
+pip3
+sudo apt-get automremove
+sudo apt-get autoremove
+cd
+ls
+cd /usr/lib/
+ls
+sudo rm -rf python*
+ls
+cd
+ls
+sudo apt-get update
+sudo apt-get upgrade
+python
+sudo apt-get install python2.7
+sudo apt-get install python-pip python-flask
+sudo pip install flask
+cd web-server/cow/
+sudo python app.py
+vi app.py 
+sudo python app.py
+sudo apt-get install python-serial
+vi app.py 
+sudo python app.py
+vi app.py 
+sudo python app.py
+exit
+cd web-server/cow/
+python app.py 
+sudo python app.py 
+exit
+cd web-server/cow/
+sudo python app.py 
+cd
+ls -a
+vim .bashrc 
+startcow
+cowstart
+exit
+sudo vim /etc/motd 
+cowstart
+vim .bashrc
+source .bashrc 
+cowstart
+startcow
+ls
+cd sketchbook/
+ls
+ls /dev/tty*
+ls
+cd darla/
+ls
+vi darla.ino 
+vi Makefile 
+make
+vi Makefile 
+cd ..
+ls
+cd blink/
+vi Makefile 
+ls /usr/share/
+ls
+vi blink.ino 
+cd ..
+ls
+cd ..
+ls
+ls soundfiles/
+cd sketchbook/
+ls
+cd libraries/
+ls
+cd ..
+ls
+cd darla/
+vi darla.ino 
+cd
+sudo apt-get install arduino-mk
+cd sketchbook/darla/
+make
+ls
+make upload
+vi darla.ino 
+start cow
+cow start
+startcow
+cowstart
+exit
+startcow
+sudo apt-get install python3
+sudo apt-get remove python3
+sudo apt --fix-broken install
+sudo apt-get remove python3
+startcow
+exit
+ls
+cd web-server/
+ls
+cd cow
+ls
+python app.py
+sudo pytho app.py
+sudo python app.py
+screen
+screen
+ls
+cd web-server/
+ls
+cd cow/
+ls
+cd templates/
+ls
+vi main.html 
+exit
+python app.py
+ls
+cd web-server/
+cd cow/
+ls
+python app.py
+sudo python app.py
+exit
+ls
+cd web-server/
+cd cow/
+ls
+vi app.py
+ls -a
+rm .app.py.swp 
+vi app.py 
+exit
+exit
+exit
+python --version
+sudo apt-get install python3
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get install --reinstall python-minimal python-lockfile
+apt --fix-broken install
+sudo apt --fix-broken install
+cleaqr
+clear
+exit
+ls
+python --version
+screen
+exit
+cowstart
+startcow
+sudo shutdown now
+ls
+cd documentation/
+ls
+vim diagram.txt
+vim todo.txt 
+cat ~/.vimrc 
+vim todo.txt 
+exit
+cd sketchbook/darla/
+ls
+vim darla.ino 
+exit
+vim sketchbook/darla/
+vim sketchbook/darla/darla.ino 
+rm sketchbook/darla/.darla.ino.swp 
+vim sketchbook/darla/darla.ino 
+screen
+sudo shutdown now
+ls
+cd /etc/wpa_supplicant/
+ls
+sudo vi wpa_supplicant.conf 
+cd ~/documentation/
+ls
+vi tools.txt 
+ls
+mv tools.txt howto.txt
+vi howto.txt 
+vi usefullBashCommands.txt 
+vi diagram.txt 
+exit
+sudo shutdown now
+exit
+cd documentation/
+ls
+vi howto.txt 
+ifconfig
+ls
+sudo su
+sudo vi /etc/dhcpcd.conf 
+sudo vi /etc/network/interfaces
+exit
+dmesg
+ps aux
+ps aux | grep dhcp
+ps -Awl | grep dhcp
+sudo cat /etc/network/interfaces.d
+cd /etc/network/interfaces.d/
+ls
+la
+ls -la
+ch
+cd
+exit
+sudo vi /etc/network/interfaces
+sudo reboot
+ls
+sudo vi /etc/network/interfaces
+sudo reboot

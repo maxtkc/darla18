@@ -11,25 +11,46 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/rpi
+~MSle0~/setup
+
+# Last Substitute String:
+$
 
 # Command Line History (newest to oldest):
-:wq
-|2,0,1517192798,,"wq"
-:w
-|2,0,1517186024,,"w"
-:make
-|2,0,1517173557,,"make"
-:make upload
-|2,0,1517173207,,"make upload"
 :q
-|2,0,1517159894,,"q"
+|2,0,1518362890,,"q"
+:q!
+|2,0,1518361377,,"q!"
+:wq
+|2,0,1518361373,,"wq"
+:set nocindent
+|2,0,1517783937,,"set nocindent"
+:set no cindent
+|2,0,1517783862,,"set no cindent"
+:set cindent none
+|2,0,1517783851,,"set cindent none"
+:set cindent=off
+|2,0,1517783840,,"set cindent=off"
+:set cindent no
+|2,0,1517783767,,"set cindent no"
+:set cindent false
+|2,0,1517783756,,"set cindent false"
+:set cindent off
+|2,0,1517783750,,"set cindent off"
+:w
+|2,0,1517783260,,"w"
+:make upload
+|2,0,1517783476,,"make upload"
+:W
+|2,0,1517771391,,"W"
+:make
+|2,0,1517710324,,"make"
+:qq
+|2,0,1517706525,,"qq"
 :157y
 |2,0,1517158852,,"157y"
 :157y171p
 |2,0,1517158735,,"157y171p"
-:q!
-|2,0,1516843379,,"q!"
 :set number
 |2,0,1516843010,,"set number"
 :!
@@ -40,6 +61,36 @@
 |2,0,1516840117,,"sp Makefile"
 
 # Search String History (newest to oldest):
+?/songs
+|2,1,1517783465,47,"songs"
+?/sfx
+|2,1,1517783442,47,"sfx"
+??music
+|2,1,1517783434,63,"music"
+?/while
+|2,1,1517782293,47,"while"
+?/setup
+|2,1,1517782289,47,"setup"
+? @$
+|2,1,1517782130,,"@$"
+?/AMA
+|2,1,1517776900,47,"AMA"
+?/ACM
+|2,1,1517775871,47,"ACM"
+??visible
+|2,1,1517772068,63,"visible"
+??relays
+|2,1,1517771918,63,"relays"
+?/13
+|2,1,1517710683,47,"13"
+?/cow
+|2,1,1517712012,47,"cow"
+?/alias
+|2,1,1517711777,47,"alias"
+?/python
+|2,1,1517711633,47,"python"
+?/print
+|2,1,1517705688,47,"print"
 ?/rpi
 |2,1,1517172856,47,"rpi"
 ?//
@@ -66,303 +117,382 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-		digitalWrite(MOTOR_INB, (sled == IN)?HIGH:LOW);
-|3,0,0,1,1,0,1517173501,"	digitalWrite(MOTOR_INB, (sled == IN)?HIGH:LOW);"
+"0	CHAR	0
+	AMA0
+|3,0,0,0,1,0,1517782130,"AMA0"
 "1	LINE	0
-		digitalWrite(MOTOR_INA, (sled == IN)?HIGH:LOW);
-|3,0,1,1,1,0,1517173539,"	digitalWrite(MOTOR_INA, (sled == IN)?HIGH:LOW);"
+	
+|3,0,1,1,1,0,1518292881,""
 "2	LINE	0
-	
-|3,0,2,1,1,0,1517173179,""
+	wpa_passphrase "testing" "testingPassword"
+|3,0,2,1,1,0,1518292804,"wpa_passphrase \"testing\" \"testingPassword\""
 "3	LINE	0
-	
-|3,0,3,1,1,0,1517173177,""
+	0x0200
+|3,0,3,1,1,0,1517783257,"0x0200"
 "4	LINE	0
-	
-|3,0,4,1,1,0,1517173176,""
-"5	CHAR	0
-	// song number or STOP for no song
-	void playMusic(uint16_t song_number) {
-		if(song_number != STOP)	sfx.playTrack(songs[song_number]);
-	}
-	
-	// sled must be OUT or IN or STOP -- thx max for ternerary ops
-	void secondaryMotion(uint16_t sled) {
-		digitalWrite(MOTOR_INA, (sled == OUT)?HIGH:LOW);
-		digitalWrite(MOTOR_INB, (sled == IN)?HIGH:LOW);
-		analogWrite(MOTOR_PWM, MOTOR_SPD);
-	}
-|3,0,5,0,11,0,1517173162,"// song number or STOP for no song","void playMusic(uint16_t song_number) {","	if(song_number != STOP)	sfx.playTrack(songs[song_number]);","}","","// sled must be OUT or IN or STOP -- thx max for ternerary ops","void secondaryMotion(uint16_t sled) {","	digitalWrite(MOTOR_INA, (sled == OUT)?HIGH:LOW);","	digitalWrite(MOTOR_INB, (sled == IN)?HIGH:LOW);","	analogWrite(MOTOR_PWM, MOTOR_SPD);","}"
+		sc
+|3,0,4,1,1,0,1517776654,"	sc"
+"5	LINE	0
+	while (int x = 1) {
+|3,0,5,1,1,0,1517776652,"while (int x = 1) {"
 "6	LINE	0
-	
-|3,0,6,1,1,0,1517172770,""
-"7	CHAR	0
-	
-	//LOONY check
-	//BYARD check
-	//CRACK check
-	//ICED xxx
-	//LONE check
-	//MLING check
-	//MTC check
-	//NEWMC xx
-	
-|3,0,7,0,10,0,1517172769,"","//LOONY check","//BYARD check","//CRACK check","//ICED xxx","//LONE check","//MLING check","//MTC check","//NEWMC xx",""
-"8	LINE	0
+					relaySer += 2**(index - 1)
+|3,0,6,1,1,0,1517771594,"				relaySer += 2**(index - 1)"
+"7	LINE	0
 				
-|3,0,8,1,1,0,1517172358,"			"
+|3,0,7,1,1,0,1517771034,"			"
+"8	LINE	0
+					print(index)
+|3,0,8,1,1,0,1517771015,"				print(index)"
 "9	LINE	0
-	
-|3,0,9,1,1,0,1517166185,""
+	import serial
+|3,0,9,1,1,0,1517705207,"import serial"
 ""-	CHAR	0
-	/
-|3,1,36,0,1,0,1517173554,"/"
+	i
+|3,1,36,0,1,0,1518293274,"i"
 
 # File marks:
-'0  134  1  ~/sketchbook/darla/darla.ino
-|4,48,134,1,1517192798,"~/sketchbook/darla/darla.ino"
-'1  3  0  ~/documentation/tools.txt
-|4,49,3,0,1517166199,"~/documentation/tools.txt"
-'2  1  28  ~/documentation/tools.txt
-|4,50,1,28,1517160784,"~/documentation/tools.txt"
-'3  1  28  ~/documentation/tools.txt
-|4,51,1,28,1517160784,"~/documentation/tools.txt"
-'4  1478  2  /usr/share/arduino/Arduino.mk
-|4,52,1478,2,1517159894,"/usr/share/arduino/Arduino.mk"
-'5  1478  2  /usr/share/arduino/Arduino.mk
-|4,53,1478,2,1517159894,"/usr/share/arduino/Arduino.mk"
-'6  1  0  ~/sketchbook/darla/Makefile
-|4,54,1,0,1517159283,"~/sketchbook/darla/Makefile"
-'7  120  0  ~/sketchbook/darla/darla.ino
-|4,55,120,0,1517158958,"~/sketchbook/darla/darla.ino"
-'8  120  0  ~/sketchbook/darla/darla.ino
-|4,56,120,0,1517158958,"~/sketchbook/darla/darla.ino"
-'9  108  0  ~/sketchbook/darla/darla.ino
-|4,57,108,0,1517158958,"~/sketchbook/darla/darla.ino"
+'0  1  0  /etc/wpa_supplicant/wpa_supplicant.conf
+|4,48,1,0,1518362890,"/etc/wpa_supplicant/wpa_supplicant.conf"
+'1  1  0  /etc/network/interfaces.dpkg-old
+|4,49,1,0,1518361411,"/etc/network/interfaces.dpkg-old"
+'2  7  1  /etc/network/interfaces
+|4,50,7,1,1518361377,"/etc/network/interfaces"
+'3  1  0  /etc/rc.local
+|4,51,1,0,1518361267,"/etc/rc.local"
+'4  47  0  ~/documentation/howto.txt
+|4,52,47,0,1518293292,"~/documentation/howto.txt"
+'5  1  0  ~/documentation/diagram.txt
+|4,53,1,0,1518292914,"~/documentation/diagram.txt"
+'6  1  0  ~/documentation/usefullBashCommands.txt
+|4,54,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+'7  1  0  ~/documentation/howto.txt
+|4,55,1,0,1518292897,"~/documentation/howto.txt"
+'8  1  0  ~/documentation/howto.txt
+|4,56,1,0,1518292897,"~/documentation/howto.txt"
+'9  1  0  ~/documentation/tools.txt
+|4,57,1,0,1518292882,"~/documentation/tools.txt"
 
 # Jumplist (newest first):
--'  134  1  ~/sketchbook/darla/darla.ino
-|4,39,134,1,1517192798,"~/sketchbook/darla/darla.ino"
--'  142  20  ~/sketchbook/darla/darla.ino
-|4,39,142,20,1517173215,"~/sketchbook/darla/darla.ino"
--'  144  0  ~/sketchbook/darla/darla.ino
-|4,39,144,0,1517173193,"~/sketchbook/darla/darla.ino"
--'  145  0  ~/sketchbook/darla/darla.ino
-|4,39,145,0,1517173149,"~/sketchbook/darla/darla.ino"
--'  111  7  ~/sketchbook/darla/darla.ino
-|4,39,111,7,1517172856,"~/sketchbook/darla/darla.ino"
--'  140  21  ~/sketchbook/darla/darla.ino
-|4,39,140,21,1517166804,"~/sketchbook/darla/darla.ino"
--'  143  0  ~/sketchbook/darla/darla.ino
-|4,39,143,0,1517166314,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/sketchbook/darla/darla.ino
-|4,39,1,0,1517166241,"~/sketchbook/darla/darla.ino"
--'  3  0  ~/documentation/tools.txt
-|4,39,3,0,1517166199,"~/documentation/tools.txt"
--'  3  0  ~/documentation/tools.txt
-|4,39,3,0,1517166199,"~/documentation/tools.txt"
--'  1  0  ~/documentation/tools.txt
-|4,39,1,0,1517162799,"~/documentation/tools.txt"
--'  1  0  ~/documentation/tools.txt
-|4,39,1,0,1517162799,"~/documentation/tools.txt"
--'  1  28  ~/documentation/tools.txt
-|4,39,1,28,1517160784,"~/documentation/tools.txt"
--'  1  28  ~/documentation/tools.txt
-|4,39,1,28,1517160784,"~/documentation/tools.txt"
--'  5  0  ~/documentation/tools.txt
-|4,39,5,0,1517159985,"~/documentation/tools.txt"
--'  2  0  ~/documentation/tools.txt
-|4,39,2,0,1517159985,"~/documentation/tools.txt"
--'  5  0  ~/documentation/tools.txt
-|4,39,5,0,1517159985,"~/documentation/tools.txt"
--'  2  0  ~/documentation/tools.txt
-|4,39,2,0,1517159985,"~/documentation/tools.txt"
--'  1478  2  /usr/share/arduino/Arduino.mk
-|4,39,1478,2,1517159894,"/usr/share/arduino/Arduino.mk"
--'  1478  2  /usr/share/arduino/Arduino.mk
-|4,39,1478,2,1517159894,"/usr/share/arduino/Arduino.mk"
--'  1478  2  /usr/share/arduino/Arduino.mk
-|4,39,1478,2,1517159894,"/usr/share/arduino/Arduino.mk"
--'  1478  2  /usr/share/arduino/Arduino.mk
-|4,39,1478,2,1517159894,"/usr/share/arduino/Arduino.mk"
--'  1478  2  /usr/share/arduino/Arduino.mk
-|4,39,1478,2,1517159894,"/usr/share/arduino/Arduino.mk"
--'  156  0  ~/sketchbook/darla/darla.ino
-|4,39,156,0,1517159805,"~/sketchbook/darla/darla.ino"
--'  155  0  ~/sketchbook/darla/darla.ino
-|4,39,155,0,1517159805,"~/sketchbook/darla/darla.ino"
--'  155  0  ~/sketchbook/darla/darla.ino
-|4,39,155,0,1517159805,"~/sketchbook/darla/darla.ino"
--'  155  0  ~/sketchbook/darla/darla.ino
-|4,39,155,0,1517159805,"~/sketchbook/darla/darla.ino"
--'  155  0  ~/sketchbook/darla/darla.ino
-|4,39,155,0,1517159805,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/sketchbook/darla/darla.ino
-|4,39,1,0,1517159527,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/sketchbook/darla/darla.ino
-|4,39,1,0,1517159527,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/sketchbook/darla/darla.ino
-|4,39,1,0,1517159527,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/sketchbook/darla/darla.ino
-|4,39,1,0,1517159527,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  1  0  ~/sketchbook/darla/Makefile
-|4,39,1,0,1517159283,"~/sketchbook/darla/Makefile"
--'  120  0  ~/sketchbook/darla/darla.ino
-|4,39,120,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  108  0  ~/sketchbook/darla/darla.ino
-|4,39,108,0,1517158958,"~/sketchbook/darla/darla.ino"
--'  216  0  ~/sketchbook/darla/darla.ino
-|4,39,216,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  208  0  ~/sketchbook/darla/darla.ino
-|4,39,208,0,1517158847,"~/sketchbook/darla/darla.ino"
--'  195  6  ~/sketchbook/darla/darla.ino
-|4,39,195,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  194  6  ~/sketchbook/darla/darla.ino
-|4,39,194,6,1517158829,"~/sketchbook/darla/darla.ino"
--'  170  5  ~/sketchbook/darla/darla.ino
-|4,39,170,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
--'  169  5  ~/sketchbook/darla/darla.ino
-|4,39,169,5,1517158755,"~/sketchbook/darla/darla.ino"
+-'  1  0  /etc/wpa_supplicant/wpa_supplicant.conf
+|4,39,1,0,1518362890,"/etc/wpa_supplicant/wpa_supplicant.conf"
+-'  1  0  /etc/network/interfaces.dpkg-old
+|4,39,1,0,1518361411,"/etc/network/interfaces.dpkg-old"
+-'  1  0  /etc/network/interfaces.dpkg-old
+|4,39,1,0,1518361411,"/etc/network/interfaces.dpkg-old"
+-'  7  1  /etc/network/interfaces
+|4,39,7,1,1518361377,"/etc/network/interfaces"
+-'  7  1  /etc/network/interfaces
+|4,39,7,1,1518361377,"/etc/network/interfaces"
+-'  7  1  /etc/network/interfaces
+|4,39,7,1,1518361377,"/etc/network/interfaces"
+-'  7  1  /etc/network/interfaces
+|4,39,7,1,1518361377,"/etc/network/interfaces"
+-'  1  0  /etc/network/interfaces
+|4,39,1,0,1518361357,"/etc/network/interfaces"
+-'  1  0  /etc/network/interfaces
+|4,39,1,0,1518361357,"/etc/network/interfaces"
+-'  1  0  /etc/network/interfaces
+|4,39,1,0,1518361357,"/etc/network/interfaces"
+-'  1  0  /etc/network/interfaces
+|4,39,1,0,1518361357,"/etc/network/interfaces"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  1  0  /etc/rc.local
+|4,39,1,0,1518361267,"/etc/rc.local"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  47  0  ~/documentation/howto.txt
+|4,39,47,0,1518293292,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/howto.txt
+|4,39,1,0,1518293252,"~/documentation/howto.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/diagram.txt
+|4,39,1,0,1518292914,"~/documentation/diagram.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
+-'  1  0  ~/documentation/usefullBashCommands.txt
+|4,39,1,0,1518292908,"~/documentation/usefullBashCommands.txt"
 
 # History of marks within files (newest to oldest):
 
+> /etc/network/interfaces.dpkg-old
+	*	1518361400	0
+	"	1	0
+
+> /etc/network/interfaces
+	*	1518361373	0
+	"	7	1
+	^	7	2
+	.	7	1
+	+	7	1
+
+> /etc/rc.local
+	*	1518361241	0
+	"	1	0
+
+> ~/documentation/howto.txt
+	*	1518293289	0
+	"	47	0
+	^	48	56
+	.	48	55
+	+	46	5
+	+	48	55
+
+> ~/documentation/diagram.txt
+	*	1518292910	0
+	"	1	0
+	^	9	1
+	.	10	0
+	+	1	12
+	+	5	13
+	+	2	18
+	+	4	10
+	+	5	0
+	+	10	6
+	+	7	13
+	+	4	18
+	+	8	17
+	+	9	13
+	+	10	0
+
+> ~/documentation/usefullBashCommands.txt
+	*	1518292900	0
+	"	1	0
+
+> ~/documentation/tools.txt
+	*	1518292881	0
+	"	1	0
+	^	44	39
+	.	1	0
+	+	4	24
+	+	1	27
+	+	7	21
+	+	7	0
+	+	10	30
+	+	9	0
+	+	13	48
+	+	12	11
+	+	16	20
+	+	17	74
+	+	18	0
+	+	17	0
+	+	1	4
+	+	6	5
+	+	9	3
+	+	12	13
+	+	16	0
+	+	15	18
+	+	16	0
+	+	17	0
+	+	16	0
+	+	3	0
+	+	1	16
+	+	46	0
+	+	19	0
+	+	22	7
+	+	27	49
+	+	28	45
+	+	28	40
+	+	46	0
+	+	28	40
+	+	30	32
+	+	45	0
+	+	31	0
+	+	32	0
+	+	33	0
+	+	34	0
+	+	35	0
+	+	45	0
+	+	35	23
+	+	29	0
+	+	31	0
+	+	26	0
+	+	42	41
+	+	39	0
+	+	46	0
+	+	42	0
+	+	41	38
+	+	44	38
+	+	1	0
+
+> ~/documentation/todo.txt
+	*	1517784186	0
+	"	21	49
+	^	21	50
+	.	21	49
+	+	14	245
+	+	16	0
+	+	15	0
+	+	20	30
+	+	21	49
+
 > ~/sketchbook/darla/darla.ino
-	*	1517186024	0
-	"	134	1
-	^	134	2
-	.	134	1
-	+	144	0
-	+	144	25
-	+	139	1
-	+	144	0
-	+	138	0
-	+	143	0
-	+	141	23
-	+	137	23
-	+	153	24
-	+	157	0
-	+	157	25
-	+	172	0
-	+	137	0
+	*	1517783494	0
+	"	140	1
+	^	140	22
+	.	140	21
 	+	119	0
 	+	120	0
 	+	124	22
@@ -450,92 +580,82 @@
 	+	142	20
 	+	106	0
 	+	134	1
+	+	142	1
+	+	143	1
+	+	140	21
+	+	143	0
+	+	140	2
+	+	141	2
+	+	142	2
+	+	143	2
+	+	140	0
+	+	141	23
+	+	143	1
+	+	141	2
+	+	140	21
 
-> ~/documentation/tools.txt
-	*	1517166198	0
-	"	3	0
-	^	3	0
-	.	2	16
-	+	5	24
-	+	1	27
-	+	8	21
-	+	8	0
-	+	11	30
-	+	10	0
-	+	14	48
-	+	13	11
-	+	17	20
-	+	18	74
-	+	19	0
-	+	18	0
-	+	1	4
-	+	7	5
-	+	10	3
-	+	13	13
-	+	17	0
-	+	16	18
-	+	17	0
-	+	18	0
-	+	17	0
-	+	4	0
-	+	2	16
-
-> /usr/share/arduino/Arduino.mk
-	*	1517159805	0
-	"	1478	2
+> ~/web-server/cow/app.py
+	*	1517776905	0
+	"	31	34
+	^	31	35
+	.	31	34
+	+	2	0
+	+	1	0
+	+	108	30
+	+	109	2
+	+	95	11
+	+	26	10
+	+	88	0
+	+	85	0
+	+	82	25
+	+	84	14
+	+	86	21
+	+	87	0
+	+	85	38
+	+	85	37
+	+	87	25
+	+	31	34
 
 > ~/sketchbook/darla/Makefile
-	*	1517159280	0
-	"	1	0
-	^	7	18
-	.	7	17
+	*	1517776840	0
+	"	4	0
+	^	4	1
+	.	4	0
 	+	2	26
-	+	5	29
+	+	7	29
 	+	1	13
 	+	2	13
+	+	5	0
+	+	6	13
+	+	5	13
+	+	9	17
+	+	2	0
 	+	3	0
-	+	4	13
-	+	3	13
-	+	7	17
+	+	4	27
+	+	3	0
+	+	4	0
 
-> ~/.vimrc
-	*	1517158268	0
-	"	15	0
-	^	15	1
-	.	15	0
-	+	20	0
-	+	25	0
-	+	15	0
-
-> ~/.screenrc
-	*	1517156986	0
-	"	30	14
-	^	30	15
-	.	30	14
-	+	30	14
+> ~/web-server/cow/templates/main.html
+	*	1517772554	0
+	"	2	6
+	^	40	91
+	.	40	90
+	+	29	29
+	+	38	90
+	+	40	90
 
 > ~/.bashrc
-	*	1517156943	0
-	"	91	0
-	.	91	0
+	*	1517712012	0
+	"	93	11
+	^	93	52
+	.	93	20
 	+	92	0
 	+	91	0
-
-> ~/documentation/usefullBashCommands.txt
-	*	1516844746	0
-	"	1	0
-
-> /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
-	*	1516843796	0
-	"	58	8
-
-> ~/sketchbook/darla/m
-	*	1516842954	0
-	"	1	0
+	+	93	20
 
 > ~/sketchbook/blink/Makefile
-	*	1516842937	0
-	"	2	27
+	*	1517710360	0
+	"	8	12
 	^	2	24
 	.	2	0
 	+	2	27
@@ -553,6 +673,56 @@
 	+	5	0
 	+	2	0
 
+> ~/sketchbook/blink/blink.ino
+	*	1517710323	0
+	"	1	0
+	.	9	8
+	+	7	8
+	+	9	8
+
+> ~/web-server/cow/ptest.py
+	*	1517707474	0
+	"	2	25
+	^	2	26
+	.	2	25
+	+	2	25
+
+> /usr/lib/python3.5/ptest.py
+	*	1517707341	0
+	"	2	0
+	^	1	10
+	.	1	9
+	+	2	25
+	+	1	9
+
+> /usr/share/arduino/Arduino.mk
+	*	1517159805	0
+	"	1478	2
+
+> ~/.vimrc
+	*	1517158268	0
+	"	15	0
+	^	15	1
+	.	15	0
+	+	20	0
+	+	25	0
+	+	15	0
+
+> ~/.screenrc
+	*	1517156986	0
+	"	30	14
+	^	30	15
+	.	30	14
+	+	30	14
+
+> /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h
+	*	1516843796	0
+	"	58	8
+
+> ~/sketchbook/darla/m
+	*	1516842954	0
+	"	1	0
+
 > ~/sketchbook/serTest/serTest.ino
 	*	1516842722	0
 	"	1	0
@@ -565,13 +735,6 @@
 	*	1516842348	0
 	"	1	0
 
-> ~/sketchbook/blink/blink.ino
-	*	1516842270	0
-	"	9	8
-	.	9	8
-	+	7	8
-	+	9	8
-
 > ~/sketchbook/Arduino.mk
 	*	1516840921	0
 	"	363	56
@@ -579,13 +742,6 @@
 > ~/sketchbook/darla4/Makefile
 	*	1516840509	0
 	"	1	0
-
-> ~/documentation/todo.txt
-	*	1516762677	0
-	"	15	244
-	^	15	245
-	.	15	245
-	+	15	245
 
 > ~/sudo
 	*	1516761171	0

@@ -137,9 +137,9 @@ void setup() {
 	Serial.println(state);
 
 //TEST CODE
-//	sfx.playTrack(songs[3]);
-//	mcp.writeGPIOAB(~0x0000);
-	secondaryMotion(STOP);
+	sfx.playTrack(songs[0]);
+	//mcp.writeGPIOAB(~0x0000);
+	//secondaryMotion(STOP);
 	while(1);
 }
 

@@ -23,11 +23,12 @@ def set():
 	# update "visible" array to represent values selected
 	global visible
 	Ser = toCSV(request)
+	print(Ser)
 	visible = toArray(Ser)
 	if request.form.get("submit") == "play":	
 
 		# open port
-		ser = serial.Serial('/dev/ttyACM1', 9600)
+		ser = serial.Serial('/dev/ttyACM0', 9600)
 		ser.write(Ser.encode())
 		return render_template('main.html', n=len(visible), values=visible, relays=relays)
 	elif request.form.get("submit") == "addRow":
@@ -78,9 +79,12 @@ def toCSV(request):
 
 		# append relay value to string, followed by comma
 		relaySer = 0
+		print(enumerate(relays))
 		for index, item in enumerate(relays):
+			print(item , index)
 			if request.form.get(item + str(i)):
-				relaySer += 2**(index - 1)
+				print(index , item)
+				relaySer += 2**(index)
 		Ser += (str(relaySer) + ",")
 
 		# append "dummy" value
@@ -88,6 +92,7 @@ def toCSV(request):
 
 	# end string with "T"
 	Ser += "T"
+	print(Ser)
 	return Ser
 	
 # convert CSV string to array to be displayed in html table
@@ -100,7 +105,8 @@ def toArray(Ser):
 	split = Ser.split(',')
 
 	# convert to integers
-	split = map(int, split)
+	split = [int(x) for x in split]
+	# split = map(int, split)
 	data = []
 	for i, value in enumerate(split):
 		# time
