@@ -856,3 +856,244 @@ sudo reboot
 ls
 sudo vi /etc/network/interfaces
 sudo reboot
+ls
+la
+ls
+cd tempfiles/
+ls
+cd ..
+ls
+rm -rf tempfiles/
+ls
+ls web-server/
+ls
+ls web-server/cow/
+ls
+ls documentation/
+ls
+git add --all
+git commit -m'just making sure everything is on git - no major changes'
+git push -u origin master
+exit
+ls
+cat documentation/howto.txt 
+wpa_passphrase "ASUS" "jazzjazz" >> /etc/wpa_supplicant/wpa_supplicant.conf 
+sudo su
+sudo reboot
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+cd ..
+ls
+cd ..
+ls
+sketchbook/
+ls
+cd sketchbook/
+ls
+cd libraries/
+ls
+vi Adafruit_Soundboard/
+exit
+ls
+cd sketchbook/
+ls
+cd darla/
+l
+ls
+vi darla.ino 
+cd
+ls
+cd documentation/
+l
+ls
+vi howto.txt 
+la
+rm .howto.txt.swp 
+vi howto.txt 
+sudo vi howto.txt 
+sudo wpa_passphrase "GUITAR_24" "jazzjazz"
+sudo wpa_passphrase "GUITAR_24" "jazzjazz" >> /etc/wpa_supplicant/wpa_supplicant.conf 
+sudo su
+sudo vi /etc/wpa_supplicant/wpa_supplicant.conf 
+cd 
+ls
+la
+vi .vimrc 
+sudo vim /etc/wpa_supplicant/wpa_supplicant.conf 
+vi .w3m/
+c
+screen
+w3m google.com
+sudo vi -u /etc/wpa_supplicant/wpa_supplicant.conf 
+sudo -E vim /etc/wpa_supplicant/wpa_supplicant.conf 
+cd documentation/
+l
+ls
+vi howto.txt 
+sudo reboot
+ls
+exit
+ls
+vi darla.ino 
+exit
+ls
+cd documentation/
+ls
+vi howto.txt 
+ls
+cd 
+l
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+screen
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+sudo reboot
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+exit
+echo 'XR' > /dev/ttyACM0 
+screen /dev/ttyACM0 9600
+exit
+screen
+screen /dev/ttyACM0 9600
+sudo reboot
+screen /dev/ttyACM0 9600
+ls
+cd documentation/
+ls
+vi howto.txt 
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+rm -rf darla.ino 
+ls
+la
+vi darla.ino
+ls
+vi darla.ino 
+ls
+mv .darla.ino.swp ../
+vi darla.ino 
+w3m google.com
+cd sketchbook/
+ls
+cd
+screen
+screen /dev/ttyACM0 9600
+exit
+cat -v < /dev/ttyACM0
+screen /dev/ttyACM0 9600
+exit
+cd documentation/
+ls
+vi howto.txt 
+exit
+w3m google.com
+exit
+vi darla.ino 
+exit
+cd
+screen /dev/ttyACM0 9600
+exit
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+ls
+rm .darla.ino.swp 
+vi darla.ino 
+screen
+exit
+ls
+cd web-server/cow/
+ls
+screen
+history |grep dev
+echo X > /dev/ttyACM0 
+exit
+w3m google.com
+history |grep ACM0
+exit
+cd
+ls
+vi documentation/
+cd sketchbook/
+ls
+cd darla/
+vi darla.ino 
+exit
+cd
+cd documentation/
+ls
+vi todo.txt 
+vi howto.txt 
+cd
+cd documentation/
+ls
+vi howto.txt 
+cd
+screen /dev/ttyACM0 9600
+exit
+cd
+screen /dev/ttyACM0 9600
+exit
+ls
+cd web-server/
+ls
+cd cow/
+ls
+screen
+exit
+screen
+cd 
+ls
+cd sketchbook/
+ls
+cd libraries/
+ls
+cd Adafruit_Soundboard/
+ls
+vi Adafruit_Soundboard.h
+cd
+ls
+cd documentation/
+ls
+vi howto.txt 
+exit
+vi darla.ino 
+exit
+ls
+cd sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+screen
+history |grep ACM)
+history |grep ACM0
+screen /dev/ttyACM0 9600
+exit
+ls
+exit

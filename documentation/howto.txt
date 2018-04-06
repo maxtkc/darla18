@@ -1,3 +1,13 @@
+ROUTER INFO
+Router Login Name: admin
+Router Password:	darlalikessam!
+LAN:MAC ends in :6D 192.168.1.17
+WAN:MAC ends in :38 192.168.1.18 (2.4G)
+
+SLED (rear connection plate)
+top: red black-black white			black red
+bot: rev gnd-gnd fwd				yello red
+
 MOUNT USB DRIVES
 
 List attached USB devices
@@ -36,13 +46,19 @@ Replaygain: off
 
 WIFI
 
+Example
 SSID = testing
 password = testingPassword
 run this at the command line to get PSK
 wpa_passphrase "testing" "testingPassword"
-copy this into
+and append to
 /etc/wpa_supplicant/wpa_supplicant.conf
+This must be performed as route
 
 ROUTER
 
-MAC Address: B8:27:EB:E0:E3:6D (Raspberry Pi Foundation)
+wlan0 MAC Address: B8:27:EB:B5:B6:38 (Raspberry Pi Foundation)
+192.168.1.18 (2.4G)
+
+eth0 MAC Address: B8:27:EB:E0:E3:6D (Raspberry Pi Foundation)
+192.168.1.17

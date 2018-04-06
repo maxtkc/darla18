@@ -1,60 +1,92 @@
+/*
+1) Need to dynamically set dropdown for songs
+2) Need to fix delayed start time of main motion CHECK FOR
+MAIN MOTION BIT SEE BELOW
+3) Need to send 0xff for no_song
+4) Need to fix problem with code not starting the first time
+data is sent from website
+5) Need to autolaunch python application on reboot
+6) Need to setup portforwarding on router
+7) Need to test secondary motion
+8) Need to add ability to control sound volume
+9) Need to flip only single bit when controlling primary
+motion
+10) Need to print serial feedback in python for debugging
+purposes
+*/
+
 #include <SoftwareSerial.h>
 #include "Adafruit_Soundboard.h"
 #include "Adafruit_MCP23017.h"
 #include <Wire.h>
 #include <avr/interrupt.h>
 
-// Set pins for soundboard
+#define	MASKS			0x0001
+#define MAIN_MOTION		0x0002
+#define DISCO_BALL		0x0004
+#define	HOUSE_LIGHTS	0x0008
+#define STROBES			0x0010
+#define MONKEYS			0x0020
+#define MARQUEE			0x0040
+#define MAIN_MOTION		0x0080
+#define COW_UP			0x8000
+
+// Soundboard pins 
 #define SFX_TX 		5
 #define SFX_RX 		6
 #define SFX_RST 	4
 
+// Soundboard commands
+#define STOP_MUSIC	0xFF
+#define VOLUME		150
+
+// Soundboard song title dimensions
+#define ROWS		6
+#define COLS		4
+
 // Default address for relay controller
 #define MCP_addr 	0
 
+// System states
 #define IDLE		0
 #define PLAY		1
 #define ERROR		2
 #define READ		3
 #define DRIVE		4
-
-#define ROWS		6
-#define COLS		4
+#define TEST		5
+#define WAIT		6	
 
 // Second identifiers for scroll
 #define DURATION	0
 #define RELAY		2
 #define SONG		1
-#define SLED		3
+#define SLED		3 //IS THIS NECESSARY
 
-#define STOP		0xFF
+// Secondary motion commands
+#define STOP_MOTION	0
+#define FORWARD		1
+#define REVERSE		2
 
+// Secondary motion pins
 #define MOTOR_INA	7
 #define MOTOR_INB	8
 #define MOTOR_PWM	9
-#define MOTOR_SPD	200
-#define IN		1
-#define OUT		2
 
-#define OUTSTOP		2
+// Second motion limit switch pins
+//IMPORTANT: 	outstop is N.O. (default HIGH) 	:ISR vector 0
+//				instop is N.C. (default LOW)	:ISR vector 1
+#define OUTSTOP		2	
 #define INSTOP		3
 
-/* Pinmap
-   2	OUTSTOP
-   3	INSTOP
-   4	SFX_RST
-   5	SFX_TX
-   6	SFX_RX
-   7	MOTOR_INA
-   8	MOTOR_INB
-   9	MOTOR_PWM
-*/
+// Secondary motion speed
+//NOTE: The slowest possible speed is 75 and the fastest is 255
+#define MOTOR_SPD	200
 
-// Create objects for Soundboard
+// Create software serial for soundboard
 SoftwareSerial ss = SoftwareSerial(SFX_TX, SFX_RX);
+// Create soundboard object
 Adafruit_Soundboard sfx = Adafruit_Soundboard(&ss, NULL, SFX_RST);
-
-// Create object for relay control
+// Create relay control object
 Adafruit_MCP23017 mcp;
 
 uint8_t state = IDLE;
@@ -66,7 +98,10 @@ uint8_t lastRow;
 String inString = "";
 uint16_t scroll[ROWS][COLS]; 
 
-char songs[12][12] = {	"LOONY   OGG",
+void secondaryMotion(uint8_t);
+
+char songs[12][12] = {	
+						"LOONY   OGG",
 						"BYARD   OGG", 
 						"CRACK   OGG",
 						"ICEC    OGG",
@@ -76,7 +111,19 @@ char songs[12][12] = {	"LOONY   OGG",
 						"NEWMC   OGG"
 };
 
+void stop_forward_motion(void) {
+	detachInterrupt(0);
+	secondaryMotion(STOP_MOTION);
+}
+
+void stop_reverse_motion(void) {
+	detachInterrupt(1);
+	secondaryMotion(STOP_MOTION);
+}
+
 void mcp_init() {
+
+	// Initialize MCP23017
 	mcp.begin(MCP_addr); 
 
 	// Set all relay control pins to output and turn off all relays 
@@ -86,27 +133,61 @@ void mcp_init() {
 	}
 }
 
-void instop() {
-	analogWrite(MOTOR_PWM, 0);
-}
-
-void outstop() {
-	analogWrite(MOTOR_PWM, 0);
-}
-
-// song number or STOP for no song
+// Play song, number cooresponds to row of array
 void playMusic(uint16_t song_number) {
-	if(song_number != STOP)	sfx.playTrack(songs[song_number]);
+//	if(song_number != STOP_MUSIC)	
+		sfx.playTrack(songs[song_number]);
+	//else
+	//	sfx.stop();
 }
 
-// sled must be OUT or IN or STOP -- thx max for ternerary ops
-void secondaryMotion(uint16_t sled) {
-	digitalWrite(MOTOR_INA, (sled == OUT)?HIGH:LOW);
-	digitalWrite(MOTOR_INB, (sled == IN)?HIGH:LOW);
-	analogWrite(MOTOR_PWM, MOTOR_SPD);
+// Stop playing song
+void playStop() {
+	sfx.stop();
+}
+
+// Set volume for music player
+void playVolume(uint8_t newVolume) {
+	int oldVolume = sfx.volUp();	
+	if (newVolume < oldVolume) {
+		while (newVolume < oldVolume) oldVolume = sfx.volDown();
+	}
+	else {
+		while (newVolume > oldVolume) oldVolume = sfx.volUp();
+	}
+}
+
+// Drive secondary motion
+void secondaryMotion(uint8_t direction) {
+	if (direction == FORWARD) {
+		analogWrite(MOTOR_PWM, MOTOR_SPD);
+		digitalWrite(MOTOR_INA, HIGH);
+		digitalWrite(MOTOR_INB, LOW);
+		attachInterrupt(0, stop_forward_motion, LOW);
+	}
+	else if (direction == REVERSE) {
+		analogWrite(MOTOR_PWM, MOTOR_SPD);
+		digitalWrite(MOTOR_INA, LOW);
+		digitalWrite(MOTOR_INB, HIGH);
+		attachInterrupt(1, stop_reverse_motion, HIGH);
+	}
+	else if (direction == STOP_MOTION) {
+		analogWrite(MOTOR_PWM, 0x00);
+		digitalWrite(MOTOR_INA, LOW);
+		digitalWrite(MOTOR_INB, LOW);
+	}
+
+}
+
+// This is ONLY a test drive function
+void primaryMotion(void) {
+	mcp.writeGPIOAB(~0x0080);
+	delay(300);
+	mcp.writeGPIOAB(~0x0000);
 }
 
 void setup() {
+	// Serial init
   	ss.begin(9600); // Start software serial for soundboard
 	Serial.begin(9600); // Hardware serial for RPI
 
@@ -123,29 +204,40 @@ void setup() {
 		state = ERROR;
 		Serial.println("ERROR");
 	}
+	//Set initial volume
+	playVolume(VOLUME);
 
 	// Motor init
+	digitalWrite(MOTOR_INA, LOW);
+	digitalWrite(MOTOR_INB, LOW);
 	pinMode(MOTOR_PWM, OUTPUT);
 	pinMode(MOTOR_INA, OUTPUT);
 	pinMode(MOTOR_INB, OUTPUT);
+	analogWrite(MOTOR_PWM, MOTOR_SPD);
 
-	// Sled interupt
-//SHOULD FIX THIS  DOES NOT COMPILE
-//	attachInterrupt(digitalPinToInterrupt(OUTSTOP), outstop, LOW);
-//	attachInterrupt(digitalPinToInterrupt(INSTOP), instop, LOW);
+	// Sensor init
+	pinMode(OUTSTOP, INPUT_PULLUP);
+	pinMode(INSTOP, INPUT_PULLUP);
 
-	Serial.println(state);
+	Serial.println("READY");
+//	playMusic(1);
+//	delay(2000);
+//	playStop();
+//	playMusic(1);
+//	delay(2000);
+//	playStop();
+//	playMusic(1);
 
-//TEST CODE
-	sfx.playTrack(songs[0]);
 	//mcp.writeGPIOAB(~0x0000);
-	//secondaryMotion(STOP);
-	while(1);
+	//primaryMotion();
+//	while(1);
+
 }
 
 void loop() {
 	switch(state) {
 		case IDLE:
+
 			if (Serial.available()) { 
 				char inChar = Serial.read(); 
 				if (inChar == 'S') {
@@ -156,16 +248,30 @@ void loop() {
 					state = DRIVE;
 					Serial.println("DRIVE");
 				}
+				else if (inChar == 'X') {
+					state = TEST;
+					Serial.println("TEST");
+				}
 			}
 			break;
 		case PLAY:
+				//NEED TO TEST FOR THE MAIN_MOTION BIT
+				if (~scroll[row][RELAY] == MAIN_MOTION) 
+					primaryMotion();
+				else
+					mcp.writeGPIOAB(~scroll[row][RELAY]);	
+				playMusic(scroll[row][SONG]);
+				state = WAIT;
+				//secondaryMotion(scroll[row][SLED]);
+			break;
+		case WAIT:
 			countNow = millis();
 			if (countNow - countLast > scroll[row][DURATION]) {
-				mcp.writeGPIOAB(~scroll[row][RELAY]);	
-				playMusic(scroll[row][SONG]);
-				secondaryMotion(scroll[row][SLED]);
 				countLast = countNow;
-				if (++row >= lastRow) {
+				row++;
+				playStop();	//This stops the song 
+				state = PLAY;
+				if (row >= lastRow) {
 					row = 0;
 					state = IDLE;
 					Serial.println("IDLE");
@@ -187,6 +293,7 @@ void loop() {
 				else if (inChar == 'T'){
 					lastRow = row;
 					row = 0;
+					countLast = millis();	
 					state = PLAY;
 					Serial.println("PLAY");
 				}
@@ -213,6 +320,35 @@ void loop() {
 			digitalWrite(SFX_RST, HIGH);
 			state = IDLE;
 			Serial.println("IDLE");
+		case TEST:
+			if(Serial.available()) { 
+				int inChar = Serial.read();
+				if (inChar == 'F') {
+					secondaryMotion(FORWARD);
+					secondaryMotion(FORWARD);
+					Serial.println("FOR");
+					state = IDLE;
+				}
+				else if (inChar == 'R') {
+					secondaryMotion(REVERSE);
+					secondaryMotion(REVERSE);
+					Serial.println("REV");
+					state = IDLE;
+				}
+				else if (inChar == 'V') {
+					Serial.println(sfx.volUp());
+					state = IDLE;
+				}
+				else if (inChar == 'D') {
+					mcp.writeGPIOAB(~0x0004);
+					state = IDLE;
+				}
+				else if (inChar == 'O'){
+					mcp.writeGPIOAB(~0x0000);
+					state = IDLE;
+				}
+			}
+				
 		case ERROR:
 			//Serial.println('$');
 			digitalWrite(13, HIGH);

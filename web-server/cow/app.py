@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # names of relay options
-relays=["CenterLights","FaceMasks","DiscoBall","MainMotion","MarqueLights","Monkeys","LightsMain","StrobeLights","CowUp","Blank","Blank","Blank","Blank","Blank","Blank","Blank"]
+relays=["Masks","MainLights","DiscoBall","HouseLights","Strobe","Monkeys","Marque","MainMotion","Blank","Blank","Blank","Blank","Blank","Blank","Blank","Blank"]
 
 # names of files storing sequences
 sequenceFiles=["sequence0.txt","sequence1.txt","sequence2.txt","sequence3.txt","sequence4.txt"]
@@ -23,13 +23,15 @@ def set():
 	# update "visible" array to represent values selected
 	global visible
 	Ser = toCSV(request)
-	print(Ser)
+# print(Ser)
 	visible = toArray(Ser)
+	print(visible)
 	if request.form.get("submit") == "play":	
 
 		# open port
 		ser = serial.Serial('/dev/ttyACM0', 9600)
 		ser.write(Ser.encode())
+		print(Ser.encode())
 		return render_template('main.html', n=len(visible), values=visible, relays=relays)
 	elif request.form.get("submit") == "addRow":
 		# add new row, identical to last row visible
@@ -47,6 +49,7 @@ def set():
 		file.truncate()
 		file.write(Ser)
 		file.close()
+		print(visible[0][1])
 		return render_template('main.html', n=len(visible), values=visible, relays=relays)
 	elif request.form.get("submit") == "open":
 	
@@ -79,11 +82,11 @@ def toCSV(request):
 
 		# append relay value to string, followed by comma
 		relaySer = 0
-		print(enumerate(relays))
+# print(enumerate(relays))
 		for index, item in enumerate(relays):
-			print(item , index)
+#			print(item , index)
 			if request.form.get(item + str(i)):
-				print(index , item)
+#				print(index , item)
 				relaySer += 2**(index)
 		Ser += (str(relaySer) + ",")
 
@@ -92,7 +95,7 @@ def toCSV(request):
 
 	# end string with "T"
 	Ser += "T"
-	print(Ser)
+#print(Ser)
 	return Ser
 	
 # convert CSV string to array to be displayed in html table
@@ -124,4 +127,4 @@ def toArray(Ser):
 	return data
 		
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=80, debug=True)
+	app.run(host='0.0.0.0', port=100, debug=True)
