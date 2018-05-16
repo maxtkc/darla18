@@ -1,4 +1,5 @@
 import serial
+import time
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -32,6 +33,10 @@ def set():
 		ser = serial.Serial('/dev/ttyACM0', 9600)
 		ser.write(Ser.encode())
 		print(Ser.encode())
+#time.sleep(.5)
+#while ser.in_waiting:  # Or: while ser.inWaiting():
+#print ser.readline()
+#print(ser.readline())
 		return render_template('main.html', n=len(visible), values=visible, relays=relays)
 	elif request.form.get("submit") == "addRow":
 		# add new row, identical to last row visible
@@ -91,7 +96,7 @@ def toCSV(request):
 		Ser += (str(relaySer) + ",")
 
 		# append "dummy" value
-		Ser += "1,"
+		Ser += "0,"
 
 	# end string with "T"
 	Ser += "T"

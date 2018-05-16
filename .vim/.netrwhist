@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/pi/web-server/cow'
 let g:netrw_dirhist_2='/home/pi/sketchbook/darla'
 let g:netrw_dirhist_3='/home/pi/sketchbook/libraries/Adafruit_Soundboard'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/home/pi/sketchbook/libraries/Adafruit_Soundboard/example
 let g:netrw_dirhist_5='/home/pi/sketchbook/libraries/Adafruit_Soundboard/examples/menucommands'
 let g:netrw_dirhist_6='/home/pi/.w3m'
 let g:netrw_dirhist_7='/home/pi/documentation'
+let g:netrw_dirhist_8='/home/pi/web-server/cow'
+let g:netrw_dirhist_9='/home/pi/web-server/cow/templates'

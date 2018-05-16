@@ -1,15 +1,18 @@
 /*
 1) Need to dynamically set dropdown for songs
-3) Need to send 0xff for no_song (working on arduino side)
+2) Need to fix delayed start time of main motion CHECK FOR
+MAIN MOTION BIT SEE BELOW
+3) Need to send 0xff for no_song
 4) Need to fix problem with code not starting the first time
 data is sent from website
 5) Need to autolaunch python application on reboot
+6) Need to setup portforwarding on router
 7) Need to test secondary motion
-8) Need to add ability to control sound volume (done on Arduino)
+8) Need to add ability to control sound volume
+9) Need to flip only single bit when controlling primary
+motion
 10) Need to print serial feedback in python for debugging
 purposes
-11) Kill button for secondary motion
-12) Kill button for all control
 */
 
 #include <SoftwareSerial.h>
@@ -18,9 +21,8 @@ purposes
 #include <Wire.h>
 #include <avr/interrupt.h>
 
-// Masking for relay NOTE: These must be sent inverted to relay control
 #define	MASKS			0x0001
-#define MAIN_LIGHTS		0x0002
+#define MAIN_MOTION		0x0002
 #define DISCO_BALL		0x0004
 #define	HOUSE_LIGHTS	0x0008
 #define STROBES			0x0010
@@ -58,7 +60,7 @@ purposes
 #define DURATION	0
 #define RELAY		2
 #define SONG		1
-#define SLED		3 
+#define SLED		3 //IS THIS NECESSARY
 
 // Secondary motion commands
 #define STOP_MOTION	0
@@ -133,7 +135,10 @@ void mcp_init() {
 
 // Play song, number cooresponds to row of array
 void playMusic(uint16_t song_number) {
+//	if(song_number != STOP_MUSIC)	
 		sfx.playTrack(songs[song_number]);
+	//else
+	//	sfx.stop();
 }
 
 // Stop playing song
@@ -171,6 +176,7 @@ void secondaryMotion(uint8_t direction) {
 		digitalWrite(MOTOR_INA, LOW);
 		digitalWrite(MOTOR_INB, LOW);
 	}
+
 }
 
 // This is ONLY a test drive function
@@ -214,9 +220,7 @@ void setup() {
 	pinMode(INSTOP, INPUT_PULLUP);
 
 	Serial.println("READY");
-
-//TESTING SCRATCH PAD
-//playMusic(0);
+//	playMusic(1);
 //	delay(2000);
 //	playStop();
 //	playMusic(1);
@@ -226,7 +230,6 @@ void setup() {
 
 //	mcp.writeGPIOAB(~0x0000);
 //	primaryMotion();
-//	secondaryMotion(REVERSE);
 //	while(1);
 
 }
@@ -234,56 +237,40 @@ void setup() {
 void loop() {
 	switch(state) {
 		case IDLE:
+
 			if (Serial.available()) { 
 				char inChar = Serial.read(); 
-				//All live control sequence commands must start with S
 				if (inChar == 'S') {
 					state = READ;
 					Serial.println("READ");
 				}
-				//This is just for controlling the song USB drive
 				else if (inChar == 'D') {
 					state = DRIVE;
 					Serial.println("DRIVE");
 				}
-				//This is just for sending simple test commands
 				else if (inChar == 'X') {
 					state = TEST;
 					Serial.println("TEST");
 				}
 			}
 			break;
-			//Play one row of commands
 		case PLAY:
-				//Check to see if MAIN_MOTION bit is set
-				//If it is set, write relay value wait and then clear
-				//just the main motion bit and then write relay value again
-				//The delay is required for triggering the main motion
-				if (scroll[row][RELAY] & MAIN_MOTION) {
-					mcp.writeGPIOAB(~scroll[row][RELAY]);	
-					delay(300);
-					scroll[row][RELAY] &= ~MAIN_MOTION;
-					mcp.writeGPIOAB(~scroll[row][RELAY]);	
-				}
+				//NEED TO TEST FOR THE MAIN_MOTION BIT
+				if (~scroll[row][RELAY] == MAIN_MOTION) 
+					primaryMotion();
 				else
-				//If main motion bit not set, just write relay value
 					mcp.writeGPIOAB(~scroll[row][RELAY]);	
-
-				//Play music if song number is NOT set to 0xff
 				if (scroll[row][SONG] != 0xFF)
 					playMusic(scroll[row][SONG]);
-				secondaryMotion(scroll[row][SLED]);
-				//Move to WAIT to wait for next row of commands
 				state = WAIT;
+				//secondaryMotion(scroll[row][SLED]);
 			break;
-			//Wait for count to elapse between each row of commands
 		case WAIT:
 			countNow = millis();
 			if (countNow - countLast > scroll[row][DURATION]) {
 				countLast = countNow;
 				row++;
-				//Stop playing song after each row of commands are complete.
-				playStop();	
+				playStop();	//This stops the song 
 				state = PLAY;
 				if (row >= lastRow) {
 					row = 0;
@@ -292,9 +279,6 @@ void loop() {
 				}
 			}
 			break;
-			//Read the entire serial string before playing
-			//The string format is:
-			//S[duration],[song],[relay],[secondary motion],...T
 		case READ:
 			if(Serial.available()) { 
 				int inChar = Serial.read();
@@ -311,6 +295,13 @@ void loop() {
 					lastRow = row;
 					row = 0;
 					countLast = millis();	
+					for(int i = 0; i < 3; i++) {
+						    for(int j = 0; j < 3; j++) {
+								        //Serial.println("%d ", scroll[i][j]);
+								        Serial.println(scroll[i][j]);
+										    }
+							    Serial.println("\n");
+					}
 					state = PLAY;
 					Serial.println("PLAY");
 				}
@@ -367,7 +358,7 @@ void loop() {
 			}
 				
 		case ERROR:
-			Serial.println('$');
+			//Serial.println('$');
 			digitalWrite(13, HIGH);
 			break;
 	}

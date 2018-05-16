@@ -20,9 +20,12 @@ set cinwords=if,else,while,do,for,switch,case
 set cindent					" C smart indentations
 set autoindent				" Auto indent for source code
 set number					" Show line numbers
+set relativenumber
 syntax on
 
 map K {gq}
 map <F2> :w<CR>:!ispell %<CR>:e %<CR>
 
+colorscheme koehler
 
+set wildmenu

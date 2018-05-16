@@ -1097,3 +1097,223 @@ screen /dev/ttyACM0 9600
 exit
 ls
 exit
+ls
+git status
+git config user.name
+git config user.email
+git add --all
+git commit -m"Everything?"
+git push -u origin master
+exit
+clear
+git status
+ls
+cd web-server/
+ls
+cd cow/
+ls
+python app.py 
+sudo python app.py 
+exit
+curl 0.0.0.0:100
+curl 192.168.1.18:80
+curl 192.168.1.18
+curl 192.168.1.18:8080
+curl 192.168.1.18:100
+exit
+startcow
+exit
+ls -a
+vim .bashrc 
+startcow
+screen
+exit
+startcow
+python web-server/
+vim web-server/cow/app.py 
+la
+cd web-server/cow/
+ls
+la
+rm .app.py.swp 
+vim app.py 
+exit
+ls
+screen /dev/ttyACM0
+ls /dev/tty*
+screen /dev/ttyACM0
+screen /dev/ttyAMA0
+screen /dev/ttyACM0
+echo S1000,0,4,1,1000,0,4,1,T > /dev/ttyACM0
+ls /dev/tty*
+echo S1000,0,4,1,1000,0,4,1,T > /dev/ttyAMA0
+exit
+clear
+sudo apt-get install tmux
+tmux
+sudo apt --fix-broken install
+sudo apt-get install tmux
+sudo apt --fix-broken install
+cat .bashrc
+startcow
+ls dev/*
+ls /dev/*
+ls /dev/tty*
+echo XD | /dev/ttyAMA0
+sudo echo XD | /dev/ttyAMA0
+sudo echo "XD" /dev/ttyAMA0
+sudo echo "XD" /dev/ttyACM0
+sudo echo "XD" | /dev/ttyACM0
+sudo echo "XD" >> /dev/ttyACM0
+cat ACM0
+cat /dev/ACM0
+echo /dev/ACM0
+echo "/dev/ACM0"
+/dev/ACM0 >> echo
+ls /dev/tty*
+cat /dev/ttyACM0
+sudo echo "XD" >> /dev/ttyACM0
+cat /dev/ttyACM0
+screen /dev/ttyACM0
+tmux
+tmux --new-session
+exit
+ls /dev/tty*
+exit
+clea
+exit
+screen -d -m -S shared
+screen
+screen -ls
+screen -x shared
+exit
+ls
+exit
+cd
+cowsay Tabs are for people who like to be fast
+clear
+exit
+starcow
+cowstart
+cd
+cowstart
+startcow
+vim web-server/cow/app.py 
+startcow
+python web-server/cow/app.py 
+vim web-server/cow/app.py 
+cowstart
+startcow 
+vim web-server/cow/app.py 
+startcow 
+vim web-server/cow/app.py 
+startcow 
+vim web-server/cow/app.py 
+startcow 
+vim web-server/cow/app.py 
+startcow 
+vim web-server/cow/app.py 
+startcow 
+vim web-server/cow/app.py 
+startcow 
+startcow
+startcow 
+vim web-server/cow/app.py 
+startcow 
+vim web-server/cow/app.py 
+startcow 
+startcow
+vim web-server/cow/app.py 
+vim .vimrc 
+source .vimrc 
+vim web-server/cow/app.py 
+startcow 
+vim web-server/cow/app.py 
+ls
+cd
+echo -e S0,0,35,1,2000,0,3,1,2000,0,0,1,T > /dev/ttyACM0/
+echo -e S0,0,35,1,2000,0,3,1,2000,0,0,1,T > /dev/ttyACM0
+echo -e S1000,0,4,1,1000,0,4,1,T > /dev/ttyACM0
+ls
+cd web-server/
+ls
+cd cow/
+ls
+cd
+ls
+cd sketchbook/
+ls
+vim print_arr.c
+cd
+startcow
+ls /dev/tty(
+ls /dev/tty*
+startcow
+/dev/tty*
+ls /dev/tty*
+ls
+vi darla.ino 
+make uplaod
+make upload
+vi darla.ino 
+la
+rm .darla.ino.swp 
+vi darla.ino 
+make upload
+vi darla.ino 
+tail -f /dev/ttyACM0
+cd ../../
+ls
+cd documentation/
+ls
+vi howto.txt 
+w3m google.com
+ls
+cd web-server/
+ls
+cd cow/
+ls
+vim
+exit
+ls
+cd web-server/
+ls
+cd cow/
+ls
+cd templates/
+ls
+la
+rm .main.html.sw*
+ls
+exit
+lslkdfsj
+ls
+ls sketchbook/
+ls
+cd sketchbook/darla/
+vi darla.ino 
+exit
+screen -d -m -S shared
+screen -ls
+screen -x pts-1.raspberrypi 
+screen -ls
+screen
+exit
+ls
+cd documentation/
+ls
+vi todo.txt 
+vi howto.txt 
+cd ../sketchbook/
+ls
+cd darla/
+ls
+vi darla.ino 
+screen
+screen -ls
+screen -x
+screen -x pts-1.raspberrypi 
+
+screen -ls
+screen -x pts-0.raspberrypi 
+exit

@@ -47,6 +47,22 @@
 					{% endif %}
 						</td>					
 				{% endfor %}
+				<!-- Secondary Motion -->
+				<td>
+					<!-- Out -->
+					{% if values[i][3] == 1 %}
+						<input autocomplete="off" autofocus class="form-control" name="sec-out" type="checkbox" checked/>
+					{% else %}
+						<input autocomplete="off" autofocus class="form-control" name="sec-out" type="checkbox"/> 
+					{% endif %}
+
+					<!-- In -->
+					{% if relayValue == 1 %}
+						<input autocomplete="off" autofocus class="form-control" name="sec-in" type="checkbox" checked/>
+					{% else %}
+						<input autocomplete="off" autofocus class="form-control" name="sec-in" type="checkbox"/> 
+					{% endif %}
+				</td>
 			</tr>
 			{% endfor %}
 		</table>

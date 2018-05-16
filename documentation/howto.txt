@@ -30,6 +30,10 @@ SERIAL
 
 kill a screen terminal screen
 ctrl-a k
+screen /dev/ttyACM0 9600
+echo -e "string" /dev/ttyACM0
+# Continuous output from serial (Max likes alot):
+tail -f /dev/ttyACM0
 
 
 AUDIO
