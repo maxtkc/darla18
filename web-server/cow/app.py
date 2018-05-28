@@ -1,3 +1,4 @@
+from threading import Timer
 import serial
 import time
 from flask import Flask, render_template, request
@@ -9,6 +10,8 @@ relays=["Masks","MainLights","DiscoBall","HouseLights","Strobe","Monkeys","Marqu
 # names of files storing sequences
 sequenceFiles=["sequence0.txt","sequence1.txt","sequence2.txt","sequence3.txt","sequence4.txt"]
 
+ser = serial.Serial('/dev/ttyACM0', 9600)
+
 @app.route('/')
 def main():
 	# store visible data, update after any submission
@@ -18,25 +21,24 @@ def main():
 	visible = [[1000,1,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],[1000,1,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]
 	return render_template('main.html', n=len(visible), values=visible, relays=relays)
 
+#	# open port
+#	global ser
+#	ser = serial.Serial('/dev/ttyACM0', 9600)
+
 @app.route("/set", methods=["POST"])
 def set():
 
 	# update "visible" array to represent values selected
 	global visible
+	global ser
+	# parse request and store it to be dealt with
 	Ser = toCSV(request)
-# print(Ser)
+	# save request
 	visible = toArray(Ser)
-	print(visible)
 	if request.form.get("submit") == "play":	
-
-		# open port
-		ser = serial.Serial('/dev/ttyACM0', 9600)
+		# send it down and return the same template back
 		ser.write(Ser.encode())
-		print(Ser.encode())
-#time.sleep(.5)
-#while ser.in_waiting:  # Or: while ser.inWaiting():
-#print ser.readline()
-#print(ser.readline())
+		print("Writing to serial: " + Ser.encode())
 		return render_template('main.html', n=len(visible), values=visible, relays=relays)
 	elif request.form.get("submit") == "addRow":
 		# add new row, identical to last row visible
@@ -54,7 +56,7 @@ def set():
 		file.truncate()
 		file.write(Ser)
 		file.close()
-		print(visible[0][1])
+#print(visible[0][1])
 		return render_template('main.html', n=len(visible), values=visible, relays=relays)
 	elif request.form.get("submit") == "open":
 	
@@ -101,6 +103,7 @@ def toCSV(request):
 	# end string with "T"
 	Ser += "T"
 #print(Ser)
+	print "CSV form:", Ser
 	return Ser
 	
 # convert CSV string to array to be displayed in html table
@@ -129,7 +132,15 @@ def toArray(Ser):
 		elif i % 4 == 2:
 			relaylist = list(reversed([int(x) for x in format(value, '016b')]))
 			data[i/4].append(relaylist)
+	print "Array form:", data
 	return data
+
+def update_ser(interval):
+	Timer(interval, update_ser, [interval]).start()
+	while ser.in_waiting:  # Or: while ser.inWaiting():
+		print "Ard:", ser.readline()
+
+update_ser(1)
 		
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=100, debug=True)

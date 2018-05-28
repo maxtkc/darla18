@@ -1317,3 +1317,23 @@ screen -x pts-1.raspberrypi
 screen -ls
 screen -x pts-0.raspberrypi 
 exit
+l
+ls
+git status
+git add --all
+git commit "as of rainy day work"
+git push -u origin master
+git status
+git add --all
+git commit -m "with last commit
+"
+git push -u origin master
+git status
+exit
+vim .screenrc 
+exit
+ls
+screen
+screen -d -m -S darla
+screen -r darla
+exit

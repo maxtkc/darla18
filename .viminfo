@@ -11,24 +11,45 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/sled
+~MSle0~/visible
+
+# Last Substitute Search Pattern:
+~MSle0&,
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :x
-|2,0,1526176392,,"x"
+|2,0,1527537162,,"x"
 :w
-|2,0,1526175975,,"w"
+|2,0,1527536740,,"w"
+:help surrount
+|2,0,1527536706,,"help surrount"
+:mkview
+|2,0,1527535747,,"mkview"
+:lo
+|2,0,1527535637,,"lo"
+:q
+|2,0,1527535555,,"q"
+:!startcow
+|2,0,1527535540,,"!startcow"
+:set fdm=indent
+|2,0,1527535484,,"set fdm=indent"
+:s/,//gn
+|2,0,1527532769,,"s/,//gn"
+:s/,//n
+|2,0,1527532762,,"s/,//n"
+:%s/,//n
+|2,0,1527532751,,"%s/,//n"
+:wq
+|2,0,1527532038,,"wq"
 :SONG
 |2,0,1526175859,,"SONG"
 :tabnew templates/main.html
 |2,0,1526175299,,"tabnew templates/main.html"
 :q!
 |2,0,1526175277,,"q!"
-:q
-|2,0,1526175275,,"q"
 :e app.py
 |2,0,1526175258,,"e app.py"
 :e
@@ -43,8 +64,6 @@ $
 |2,0,1526165852,,"make"
 :sp ../../documentation/howto.txt
 |2,0,1526163582,,"sp ../../documentation/howto.txt"
-:!startcow
-|2,0,1526174304,,"!startcow"
 :startcow
 |2,0,1526174300,,"startcow"
 :!cowstart
@@ -55,8 +74,6 @@ $
 |2,0,1526170629,,"colorscheme koehler"
 :set relativenumber
 |2,0,1526170621,,"set relativenumber"
-:wq
-|2,0,1526172101,,"wq"
 :m
 |2,0,1526170918,,"m"
 :scro
@@ -75,6 +92,28 @@ $
 |2,0,1522526829,,"ew"
 
 # Search String History (newest to oldest):
+?/visible
+|2,1,1527537149,47,"visible"
+?/relays
+|2,1,1527537132,47,"relays"
+?/print
+|2,1,1527536676,47,"print"
+?/dummy
+|2,1,1527535817,47,"dummy"
+? \<toCSV\>
+|2,1,1527535683,,"\\<toCSV\\>"
+?/visibl
+|2,1,1527535650,47,"visibl"
+?/print(
+|2,1,1527535500,47,"print("
+?/ser
+|2,1,1527533775,47,"ser"
+?/while(ser
+|2,1,1527533772,47,"while(ser"
+?/secondary
+|2,1,1527532782,47,"secondary"
+? ,
+|2,1,1527532769,,","
 ?/sled
 |2,1,1526175909,47,"sled"
 ?/SONG
@@ -87,8 +126,6 @@ $
 |2,1,1526166647,47,"playmusic"
 ?/song
 |2,1,1526166556,47,"song"
-?/print
-|2,1,1526165717,47,"print"
 ?/primary
 |2,1,1526165077,47,"primary"
 ?/error
@@ -111,8 +148,6 @@ $
 |2,1,1526171494,47,"for"
 ?/Serial.print
 |2,1,1526171267,47,"Serial.print"
-?/ser
-|2,1,1526171832,47,"ser"
 ?/scro
 |2,1,1526170521,47,"scro"
 ?/main_motion
@@ -156,35 +191,36 @@ $
 
 # Registers:
 "0	LINE	0
-						<!-- Out -->
-|3,0,0,1,1,0,1526176134,"					<!-- Out -->"
-"1	LINE	0
-						<input autocomplete="off" autofocus class="form-control" name="sec-in" type="checkbox"/> 
-|3,0,1,1,1,0,1526176103,"					<input autocomplete=\"off\" autofocus class=\"form-control\" name=\"sec-in\" type=\"checkbox\"/> "
-"2	CHAR	0
-	{{relays[loop.index - 1] ~ i}}
-|3,0,2,0,1,0,1526176029,"{{relays[loop.index - 1] ~ i}}"
-"3	CHAR	0
-	{{relays[loop.index - 1] ~ i}}
-|3,0,3,0,1,0,1526175857,"{{relays[loop.index - 1] ~ i}}"
+		print("Array form: ", data)
+|3,0,0,1,1,0,1527536073,"	print(\"Array form: \", data)"
+""1	LINE	0
+	#print(ser.readline())
+|3,1,1,1,1,0,1527537079,"#print(ser.readline())"
+"2	LINE	0
+	#time.sleep(.5)
+|3,0,2,1,1,0,1527537079,"#time.sleep(.5)"
+"3	LINE	0
+	#print(visible)
+|3,0,3,1,1,0,1527537052,"#print(visible)"
 "4	LINE	0
-					scroll[row][RELAY] = ~scroll[row][RELAY];
-|3,0,4,1,1,0,1526172063,"				scroll[row][RELAY] = ~scroll[row][RELAY];"
+	# print(Ser)
+|3,0,4,1,1,0,1527537051,"# print(Ser)"
 "5	LINE	0
 	
-|3,0,5,1,1,0,1526171042,""
+|3,0,5,1,1,0,1527533802,""
 "6	LINE	0
-									        //Serial.println("%d ", scroll[i][j]);
-|3,0,6,1,1,0,1526170958,"								        //Serial.println(\"%d \", scroll[i][j]);"
+			while ser.in_waiting:  # Or: while ser.inWaiting():
+				print ser.readline()
+|3,0,6,1,2,0,1527533788,"		while ser.in_waiting:  # Or: while ser.inWaiting():","			print ser.readline()"
 "7	LINE	0
-				
-|3,0,7,1,1,0,1526170903,"			"
+	
+|3,0,7,1,1,0,1527533366,""
 "8	LINE	0
-					state = WAIT;
-|3,0,8,1,1,0,1526170594,"				state = WAIT;"
+		global ser
+|3,0,8,1,1,0,1527533364,"	global ser"
 "9	LINE	0
 	
-|3,0,9,1,1,0,1526170334,""
+|3,0,9,1,1,0,1527533350,""
 "a	LINE	0
 						{% if relayValue == 1 %}
 |3,0,10,1,1,0,1526175980,"					{% if relayValue == 1 %}"
@@ -203,326 +239,317 @@ $
 |3,0,21,0,1,0,1520191876,>602
 |<"illi			;whxx:w:w:m€kujdddd:wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjovod€kbid playVlu€kb€kboi€kblume(uint8_t volume) {o|x}kkikddjo€kb}kint€kb€kb	int getVolume€kb€kb€kb€kb€kb€kb€kb€kb€kbklllllllllllllllllinewVlxjioldVolume = sfx.volUP€kbp();oif newVolue€kbme < oldVlu€kb€kbolumehhhhhhhhhhhhhhhhhhhhi(A) a{owhile (newVolume <
 |< oldVl€kbolm€kbume) ooldVlu€kb€kbolume = sfx.volDown();:wo€kbelseowhile (newVolume > oldVolume) kkuuuu"
-""-	CHAR	0
-	relayValue
-|3,1,36,0,1,0,1526176149,"relayValue"
+"-	CHAR	0
+	sent
+|3,0,36,0,1,0,1527537069,"sent"
 
 # File marks:
-'0  375  0  ~/sketchbook/darla/darla.ino
-|4,48,375,0,1526176392,"~/sketchbook/darla/darla.ino"
-'1  5  0  ~/web-server/cow/app.py
-|4,49,5,0,1526176383,"~/web-server/cow/app.py"
-'2  1  0  ~/documentation/howto.txt
-|4,50,1,0,1526175131,"~/documentation/howto.txt"
-'3  233  0  ~/sketchbook/darla/darla.ino
-|4,51,233,0,1526175131,"~/sketchbook/darla/darla.ino"
-'4  29  22  ~/web-server/cow/templates/main.html
-|4,52,29,22,1526175131,"~/web-server/cow/templates/main.html"
-'5  233  0  ~/sketchbook/darla/darla.ino
-|4,53,233,0,1526175131,"~/sketchbook/darla/darla.ino"
-'6  29  22  ~/web-server/cow/templates/main.html
-|4,54,29,22,1526175131,"~/web-server/cow/templates/main.html"
-'7  29  22  ~/web-server/cow/templates/main.html
-|4,55,29,22,1526175131,"~/web-server/cow/templates/main.html"
-'8  11  9  ~/sketchbook/print_arr.c
-|4,56,11,9,1526174330,"~/sketchbook/print_arr.c"
-'9  268  3  ~/sketchbook/darla/darla.ino
-|4,57,268,3,1526172101,"~/sketchbook/darla/darla.ino"
+'0  21  1  ~/web-server/cow/app.py
+|4,48,21,1,1527537162,"~/web-server/cow/app.py"
+'1  41  7  ~/web-server/cow/app.py
+|4,49,41,7,1527536749,"~/web-server/cow/app.py"
+'2  41  7  ~/web-server/cow/app.py
+|4,50,41,7,1527536749,"~/web-server/cow/app.py"
+'3  143  12  ~/web-server/cow/app.py
+|4,51,143,12,1527536613,"~/web-server/cow/app.py"
+'4  143  12  ~/web-server/cow/app.py
+|4,52,143,12,1527536613,"~/web-server/cow/app.py"
+'5  145  12  ~/web-server/cow/app.py
+|4,53,145,12,1527536613,"~/web-server/cow/app.py"
+'6  145  12  ~/web-server/cow/app.py
+|4,54,145,12,1527536613,"~/web-server/cow/app.py"
+'7  40  0  ~/web-server/cow/app.py
+|4,55,40,0,1527536163,"~/web-server/cow/app.py"
+'8  40  0  ~/web-server/cow/app.py
+|4,56,40,0,1527536163,"~/web-server/cow/app.py"
+'9  40  0  ~/web-server/cow/app.py
+|4,57,40,0,1527536163,"~/web-server/cow/app.py"
 
 # Jumplist (newest first):
--'  375  0  ~/sketchbook/darla/darla.ino
-|4,39,375,0,1526176392,"~/sketchbook/darla/darla.ino"
--'  5  0  ~/web-server/cow/app.py
-|4,39,5,0,1526176383,"~/web-server/cow/app.py"
--'  61  8  ~/sketchbook/darla/darla.ino
-|4,39,61,8,1526175914,"~/sketchbook/darla/darla.ino"
--'  297  54  ~/sketchbook/darla/darla.ino
-|4,39,297,54,1526175909,"~/sketchbook/darla/darla.ino"
--'  59  13  ~/sketchbook/darla/darla.ino
-|4,39,59,13,1526175884,"~/sketchbook/darla/darla.ino"
--'  3  28  ~/sketchbook/darla/darla.ino
-|4,39,3,28,1526175863,"~/sketchbook/darla/darla.ino"
--'  2  40  ~/sketchbook/darla/darla.ino
-|4,39,2,40,1526175863,"~/sketchbook/darla/darla.ino"
--'  244  43  ~/sketchbook/darla/darla.ino
-|4,39,244,43,1526175368,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/sketchbook/darla/darla.ino
-|4,39,1,0,1526175307,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/documentation/howto.txt
-|4,39,1,0,1526175131,"~/documentation/howto.txt"
--'  233  0  ~/sketchbook/darla/darla.ino
-|4,39,233,0,1526175131,"~/sketchbook/darla/darla.ino"
--'  29  22  ~/web-server/cow/templates/main.html
-|4,39,29,22,1526175131,"~/web-server/cow/templates/main.html"
--'  1  0  ~/documentation/howto.txt
-|4,39,1,0,1526175131,"~/documentation/howto.txt"
--'  29  22  ~/web-server/cow/templates/main.html
-|4,39,29,22,1526175131,"~/web-server/cow/templates/main.html"
--'  1  0  ~/documentation/howto.txt
-|4,39,1,0,1526175131,"~/documentation/howto.txt"
--'  233  0  ~/sketchbook/darla/darla.ino
-|4,39,233,0,1526175131,"~/sketchbook/darla/darla.ino"
--'  29  22  ~/web-server/cow/templates/main.html
-|4,39,29,22,1526175131,"~/web-server/cow/templates/main.html"
--'  1  0  ~/documentation/howto.txt
-|4,39,1,0,1526175131,"~/documentation/howto.txt"
--'  233  0  ~/sketchbook/darla/darla.ino
-|4,39,233,0,1526175131,"~/sketchbook/darla/darla.ino"
--'  1  0  ~/documentation/howto.txt
-|4,39,1,0,1526175131,"~/documentation/howto.txt"
--'  233  0  ~/sketchbook/darla/darla.ino
-|4,39,233,0,1526175131,"~/sketchbook/darla/darla.ino"
--'  29  22  ~/web-server/cow/templates/main.html
-|4,39,29,22,1526175131,"~/web-server/cow/templates/main.html"
--'  1  0  ~/documentation/howto.txt
-|4,39,1,0,1526175131,"~/documentation/howto.txt"
--'  233  0  ~/sketchbook/darla/darla.ino
-|4,39,233,0,1526175131,"~/sketchbook/darla/darla.ino"
--'  29  22  ~/web-server/cow/templates/main.html
-|4,39,29,22,1526175131,"~/web-server/cow/templates/main.html"
--'  11  9  ~/sketchbook/print_arr.c
-|4,39,11,9,1526174330,"~/sketchbook/print_arr.c"
--'  11  9  ~/sketchbook/print_arr.c
-|4,39,11,9,1526174330,"~/sketchbook/print_arr.c"
--'  11  9  ~/sketchbook/print_arr.c
-|4,39,11,9,1526174330,"~/sketchbook/print_arr.c"
--'  11  9  ~/sketchbook/print_arr.c
-|4,39,11,9,1526174330,"~/sketchbook/print_arr.c"
--'  11  9  ~/sketchbook/print_arr.c
-|4,39,11,9,1526174330,"~/sketchbook/print_arr.c"
--'  11  9  ~/sketchbook/print_arr.c
-|4,39,11,9,1526174330,"~/sketchbook/print_arr.c"
--'  23  9  ~/web-server/cow/templates/main.html
-|4,39,23,9,1526174191,"~/web-server/cow/templates/main.html"
--'  23  9  ~/web-server/cow/templates/main.html
-|4,39,23,9,1526174191,"~/web-server/cow/templates/main.html"
--'  23  9  ~/web-server/cow/templates/main.html
-|4,39,23,9,1526174191,"~/web-server/cow/templates/main.html"
--'  23  9  ~/web-server/cow/templates/main.html
-|4,39,23,9,1526174191,"~/web-server/cow/templates/main.html"
--'  23  9  ~/web-server/cow/templates/main.html
-|4,39,23,9,1526174191,"~/web-server/cow/templates/main.html"
--'  24  79  ~/web-server/cow/templates/main.html
-|4,39,24,79,1526174190,"~/web-server/cow/templates/main.html"
--'  24  79  ~/web-server/cow/templates/main.html
-|4,39,24,79,1526174190,"~/web-server/cow/templates/main.html"
--'  24  79  ~/web-server/cow/templates/main.html
-|4,39,24,79,1526174190,"~/web-server/cow/templates/main.html"
--'  24  79  ~/web-server/cow/templates/main.html
-|4,39,24,79,1526174190,"~/web-server/cow/templates/main.html"
--'  24  79  ~/web-server/cow/templates/main.html
-|4,39,24,79,1526174190,"~/web-server/cow/templates/main.html"
--'  14  7  ~/web-server/cow/templates/main.html
-|4,39,14,7,1526174188,"~/web-server/cow/templates/main.html"
--'  14  7  ~/web-server/cow/templates/main.html
-|4,39,14,7,1526174188,"~/web-server/cow/templates/main.html"
--'  14  7  ~/web-server/cow/templates/main.html
-|4,39,14,7,1526174188,"~/web-server/cow/templates/main.html"
--'  14  7  ~/web-server/cow/templates/main.html
-|4,39,14,7,1526174188,"~/web-server/cow/templates/main.html"
--'  14  7  ~/web-server/cow/templates/main.html
-|4,39,14,7,1526174188,"~/web-server/cow/templates/main.html"
--'  1  0  ~/web-server/cow/templates/main.html
-|4,39,1,0,1526174187,"~/web-server/cow/templates/main.html"
--'  1  0  ~/web-server/cow/templates/main.html
-|4,39,1,0,1526174187,"~/web-server/cow/templates/main.html"
--'  1  0  ~/web-server/cow/templates/main.html
-|4,39,1,0,1526174187,"~/web-server/cow/templates/main.html"
--'  1  0  ~/web-server/cow/templates/main.html
-|4,39,1,0,1526174187,"~/web-server/cow/templates/main.html"
--'  1  0  ~/web-server/cow/templates/main.html
-|4,39,1,0,1526174187,"~/web-server/cow/templates/main.html"
--'  46  0  ~/documentation/howto.txt
-|4,39,46,0,1526174104,"~/documentation/howto.txt"
--'  46  0  ~/documentation/howto.txt
-|4,39,46,0,1526174104,"~/documentation/howto.txt"
--'  46  0  ~/documentation/howto.txt
-|4,39,46,0,1526174104,"~/documentation/howto.txt"
--'  46  0  ~/documentation/howto.txt
-|4,39,46,0,1526174104,"~/documentation/howto.txt"
--'  46  0  ~/documentation/howto.txt
-|4,39,46,0,1526174104,"~/documentation/howto.txt"
--'  46  0  ~/documentation/howto.txt
-|4,39,46,0,1526174104,"~/documentation/howto.txt"
--'  16  0  ~/web-server/cow/app.py
-|4,39,16,0,1526173718,"~/web-server/cow/app.py"
--'  16  0  ~/web-server/cow/app.py
-|4,39,16,0,1526173718,"~/web-server/cow/app.py"
--'  16  0  ~/web-server/cow/app.py
-|4,39,16,0,1526173718,"~/web-server/cow/app.py"
--'  16  0  ~/web-server/cow/app.py
-|4,39,16,0,1526173718,"~/web-server/cow/app.py"
--'  16  0  ~/web-server/cow/app.py
-|4,39,16,0,1526173718,"~/web-server/cow/app.py"
+-'  21  1  ~/web-server/cow/app.py
+|4,39,21,1,1527537162,"~/web-server/cow/app.py"
+-'  18  8  ~/web-server/cow/app.py
+|4,39,18,8,1527537155,"~/web-server/cow/app.py"
+-'  17  9  ~/web-server/cow/app.py
+|4,39,17,9,1527537155,"~/web-server/cow/app.py"
+-'  82  22  ~/web-server/cow/app.py
+|4,39,82,22,1527537155,"~/web-server/cow/app.py"
+-'  73  61  ~/web-server/cow/app.py
+|4,39,73,61,1527537155,"~/web-server/cow/app.py"
+-'  72  2  ~/web-server/cow/app.py
+|4,39,72,2,1527537155,"~/web-server/cow/app.py"
+-'  71  12  ~/web-server/cow/app.py
+|4,39,71,12,1527537155,"~/web-server/cow/app.py"
+-'  60  61  ~/web-server/cow/app.py
+|4,39,60,61,1527537155,"~/web-server/cow/app.py"
+-'  59  7  ~/web-server/cow/app.py
+|4,39,59,7,1527537155,"~/web-server/cow/app.py"
+-'  47  61  ~/web-server/cow/app.py
+|4,39,47,61,1527537155,"~/web-server/cow/app.py"
+-'  46  2  ~/web-server/cow/app.py
+|4,39,46,2,1527537155,"~/web-server/cow/app.py"
+-'  45  23  ~/web-server/cow/app.py
+|4,39,45,23,1527537155,"~/web-server/cow/app.py"
+-'  44  39  ~/web-server/cow/app.py
+|4,39,44,39,1527537154,"~/web-server/cow/app.py"
+-'  42  61  ~/web-server/cow/app.py
+|4,39,42,61,1527537154,"~/web-server/cow/app.py"
+-'  37  1  ~/web-server/cow/app.py
+|4,39,37,1,1527537154,"~/web-server/cow/app.py"
+-'  32  8  ~/web-server/cow/app.py
+|4,39,32,8,1527537154,"~/web-server/cow/app.py"
+-'  31  11  ~/web-server/cow/app.py
+|4,39,31,11,1527537154,"~/web-server/cow/app.py"
+-'  22  60  ~/web-server/cow/app.py
+|4,39,22,60,1527537154,"~/web-server/cow/app.py"
+-'  8  0  ~/web-server/cow/app.py
+|4,39,8,0,1527537137,"~/web-server/cow/app.py"
+-'  57  16  ~/web-server/cow/app.py
+|4,39,57,16,1527537132,"~/web-server/cow/app.py"
 -'  1  0  ~/web-server/cow/app.py
-|4,39,1,0,1526173636,"~/web-server/cow/app.py"
+|4,39,1,0,1527536940,"~/web-server/cow/app.py"
+-'  41  7  ~/web-server/cow/app.py
+|4,39,41,7,1527536749,"~/web-server/cow/app.py"
+-'  41  7  ~/web-server/cow/app.py
+|4,39,41,7,1527536749,"~/web-server/cow/app.py"
+-'  38  1  ~/web-server/cow/app.py
+|4,39,38,1,1527536746,"~/web-server/cow/app.py"
+-'  36  2  ~/web-server/cow/app.py
+|4,39,36,2,1527536746,"~/web-server/cow/app.py"
+-'  37  1  ~/web-server/cow/app.py
+|4,39,37,1,1527536746,"~/web-server/cow/app.py"
+-'  35  2  ~/web-server/cow/app.py
+|4,39,35,2,1527536746,"~/web-server/cow/app.py"
+-'  141  2  ~/web-server/cow/app.py
+|4,39,141,2,1527536743,"~/web-server/cow/app.py"
+-'  143  2  ~/web-server/cow/app.py
+|4,39,143,2,1527536743,"~/web-server/cow/app.py"
+-'  135  19  ~/web-server/cow/app.py
+|4,39,135,19,1527536741,"~/web-server/cow/app.py"
+-'  137  19  ~/web-server/cow/app.py
+|4,39,137,19,1527536741,"~/web-server/cow/app.py"
+-'  110  16  ~/web-server/cow/app.py
+|4,39,110,16,1527536728,"~/web-server/cow/app.py"
+-'  112  16  ~/web-server/cow/app.py
+|4,39,112,16,1527536728,"~/web-server/cow/app.py"
+-'  105  1  ~/web-server/cow/app.py
+|4,39,105,1,1527536684,"~/web-server/cow/app.py"
+-'  107  1  ~/web-server/cow/app.py
+|4,39,107,1,1527536684,"~/web-server/cow/app.py"
+-'  96  5  ~/web-server/cow/app.py
+|4,39,96,5,1527536683,"~/web-server/cow/app.py"
+-'  94  4  ~/web-server/cow/app.py
+|4,39,94,4,1527536683,"~/web-server/cow/app.py"
+-'  98  5  ~/web-server/cow/app.py
+|4,39,98,5,1527536683,"~/web-server/cow/app.py"
+-'  96  4  ~/web-server/cow/app.py
+|4,39,96,4,1527536683,"~/web-server/cow/app.py"
+-'  94  2  ~/web-server/cow/app.py
+|4,39,94,2,1527536682,"~/web-server/cow/app.py"
+-'  61  1  ~/web-server/cow/app.py
+|4,39,61,1,1527536682,"~/web-server/cow/app.py"
+-'  43  1  ~/web-server/cow/app.py
+|4,39,43,1,1527536681,"~/web-server/cow/app.py"
 -'  1  0  ~/web-server/cow/app.py
-|4,39,1,0,1526173636,"~/web-server/cow/app.py"
+|4,39,1,0,1527536676,"~/web-server/cow/app.py"
+-'  145  12  ~/web-server/cow/app.py
+|4,39,145,12,1527536613,"~/web-server/cow/app.py"
+-'  145  12  ~/web-server/cow/app.py
+|4,39,145,12,1527536613,"~/web-server/cow/app.py"
+-'  35  2  ~/web-server/cow/app.py
+|4,39,35,2,1527536581,"~/web-server/cow/app.py"
+-'  143  2  ~/web-server/cow/app.py
+|4,39,143,2,1527536579,"~/web-server/cow/app.py"
+-'  137  1  ~/web-server/cow/app.py
+|4,39,137,1,1527536576,"~/web-server/cow/app.py"
+-'  108  1  ~/web-server/cow/app.py
+|4,39,108,1,1527536575,"~/web-server/cow/app.py"
+-'  108  1  ~/web-server/cow/app.py
+|4,39,108,1,1527536575,"~/web-server/cow/app.py"
+-'  107  1  ~/web-server/cow/app.py
+|4,39,107,1,1527536575,"~/web-server/cow/app.py"
+-'  98  5  ~/web-server/cow/app.py
+|4,39,98,5,1527536574,"~/web-server/cow/app.py"
+-'  96  4  ~/web-server/cow/app.py
+|4,39,96,4,1527536574,"~/web-server/cow/app.py"
+-'  94  2  ~/web-server/cow/app.py
+|4,39,94,2,1527536574,"~/web-server/cow/app.py"
+-'  61  1  ~/web-server/cow/app.py
+|4,39,61,1,1527536574,"~/web-server/cow/app.py"
+-'  43  1  ~/web-server/cow/app.py
+|4,39,43,1,1527536553,"~/web-server/cow/app.py"
+-'  42  14  ~/web-server/cow/app.py
+|4,39,42,14,1527536552,"~/web-server/cow/app.py"
+-'  42  14  ~/web-server/cow/app.py
+|4,39,42,14,1527536552,"~/web-server/cow/app.py"
+-'  37  1  ~/web-server/cow/app.py
+|4,39,37,1,1527536523,"~/web-server/cow/app.py"
+-'  41  2  ~/web-server/cow/app.py
+|4,39,41,2,1527536519,"~/web-server/cow/app.py"
 -'  1  0  ~/web-server/cow/app.py
-|4,39,1,0,1526173636,"~/web-server/cow/app.py"
+|4,39,1,0,1527536498,"~/web-server/cow/app.py"
+-'  40  0  ~/web-server/cow/app.py
+|4,39,40,0,1527536163,"~/web-server/cow/app.py"
+-'  40  0  ~/web-server/cow/app.py
+|4,39,40,0,1527536163,"~/web-server/cow/app.py"
+-'  40  0  ~/web-server/cow/app.py
+|4,39,40,0,1527536163,"~/web-server/cow/app.py"
+-'  102  12  ~/web-server/cow/app.py
+|4,39,102,12,1527535817,"~/web-server/cow/app.py"
+-'  103  1  ~/web-server/cow/app.py
+|4,39,103,1,1527535817,"~/web-server/cow/app.py"
+-'  102  12  ~/web-server/cow/app.py
+|4,39,102,12,1527535817,"~/web-server/cow/app.py"
+-'  103  1  ~/web-server/cow/app.py
+|4,39,103,1,1527535817,"~/web-server/cow/app.py"
+-'  102  12  ~/web-server/cow/app.py
+|4,39,102,12,1527535817,"~/web-server/cow/app.py"
+-'  103  1  ~/web-server/cow/app.py
+|4,39,103,1,1527535817,"~/web-server/cow/app.py"
+-'  34  7  ~/web-server/cow/app.py
+|4,39,34,7,1527535683,"~/web-server/cow/app.py"
+-'  34  7  ~/web-server/cow/app.py
+|4,39,34,7,1527535683,"~/web-server/cow/app.py"
+-'  34  7  ~/web-server/cow/app.py
+|4,39,34,7,1527535683,"~/web-server/cow/app.py"
+-'  36  0  ~/web-server/cow/app.py
+|4,39,36,0,1527535650,"~/web-server/cow/app.py"
+-'  36  0  ~/web-server/cow/app.py
+|4,39,36,0,1527535650,"~/web-server/cow/app.py"
+-'  36  0  ~/web-server/cow/app.py
+|4,39,36,0,1527535650,"~/web-server/cow/app.py"
 -'  1  0  ~/web-server/cow/app.py
-|4,39,1,0,1526173636,"~/web-server/cow/app.py"
+|4,39,1,0,1527535634,"~/web-server/cow/app.py"
+-'  36  5  ~/web-server/cow/app.py
+|4,39,36,5,1527535555,"~/web-server/cow/app.py"
+-'  37  1  ~/web-server/cow/app.py
+|4,39,37,1,1527535505,"~/web-server/cow/app.py"
+-'  37  1  ~/web-server/cow/app.py
+|4,39,37,1,1527535505,"~/web-server/cow/app.py"
+-'  35  2  ~/web-server/cow/app.py
+|4,39,35,2,1527535504,"~/web-server/cow/app.py"
+-'  35  2  ~/web-server/cow/app.py
+|4,39,35,2,1527535504,"~/web-server/cow/app.py"
+-'  113  0  ~/web-server/cow/app.py
+|4,39,113,0,1527535500,"~/web-server/cow/app.py"
+-'  113  0  ~/web-server/cow/app.py
+|4,39,113,0,1527535500,"~/web-server/cow/app.py"
+-'  112  0  ~/web-server/cow/app.py
+|4,39,112,0,1527535500,"~/web-server/cow/app.py"
+-'  113  0  ~/web-server/cow/app.py
+|4,39,113,0,1527535500,"~/web-server/cow/app.py"
+-'  112  0  ~/web-server/cow/app.py
+|4,39,112,0,1527535500,"~/web-server/cow/app.py"
 -'  1  0  ~/web-server/cow/app.py
-|4,39,1,0,1526173636,"~/web-server/cow/app.py"
--'  268  3  ~/sketchbook/darla/darla.ino
-|4,39,268,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  264  3  ~/sketchbook/darla/darla.ino
-|4,39,264,3,1526172101,"~/sketchbook/darla/darla.ino"
--'  269  0  ~/sketchbook/darla/darla.ino
-|4,39,269,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  265  0  ~/sketchbook/darla/darla.ino
-|4,39,265,0,1526172092,"~/sketchbook/darla/darla.ino"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  36  0  ~/web-server/cow/app.py
-|4,39,36,0,1526172036,"~/web-server/cow/app.py"
--'  372  21  ~/sketchbook/darla/darla.ino
-|4,39,372,21,1526171920,"~/sketchbook/darla/darla.ino"
--'  365  21  ~/sketchbook/darla/darla.ino
-|4,39,365,21,1526171920,"~/sketchbook/darla/darla.ino"
--'  365  21  ~/sketchbook/darla/darla.ino
-|4,39,365,21,1526171920,"~/sketchbook/darla/darla.ino"
--'  365  21  ~/sketchbook/darla/darla.ino
-|4,39,365,21,1526171920,"~/sketchbook/darla/darla.ino"
--'  365  21  ~/sketchbook/darla/darla.ino
-|4,39,365,21,1526171920,"~/sketchbook/darla/darla.ino"
--'  365  21  ~/sketchbook/darla/darla.ino
-|4,39,365,21,1526171920,"~/sketchbook/darla/darla.ino"
+|4,39,1,0,1527535469,"~/web-server/cow/app.py"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
+-'  19  0  ~/.screenrc
+|4,39,19,0,1527534808,"~/.screenrc"
 
 # History of marks within files (newest to oldest):
 
 > ~/web-server/cow/app.py
-	*	1526176382	0
-	"	5	0
-	^	38	1
-	.	99	10
-	+	32	1
-	+	33	0
-	+	35	0
-	+	32	20
-	+	89	1
-	+	91	0
+	*	1527537155	0
+	"	21	1
+	^	39	37
+	.	39	36
+	+	40	1
+	+	40	0
+	+	41	0
+	+	40	20
+	+	91	1
 	+	93	0
-	+	27	1
-	+	102	0
-	+	7	101
-	+	33	0
-	+	32	0
-	+	34	1
-	+	34	0
-	+	134	30
-	+	56	20
-	+	39	11
-	+	38	26
-	+	37	0
+	+	95	0
+	+	36	1
+	+	104	0
+	+	8	101
+	+	40	0
+	+	40	1
+	+	40	0
+	+	145	30
+	+	58	20
+	+	42	11
+	+	42	77
+	+	42	0
+	+	42	51
+	+	42	0
+	+	42	8
+	+	42	16
+	+	42	0
+	+	3	10
+	+	42	0
+	+	42	51
+	+	101	10
+	+	42	0
+	+	42	51
+	+	42	0
+	+	31	0
+	+	42	0
+	+	40	0
+	+	24	0
+	+	23	0
+	+	24	0
+	+	33	10
+	+	25	10
+	+	15	0
+	+	12	0
+	+	13	0
+	+	25	0
+	+	2	0
+	+	139	52
+	+	144	0
+	+	42	0
+	+	144	0
+	+	140	0
+	+	144	0
+	+	138	13
+	+	143	12
+	+	139	26
+	+	111	0
+	+	135	28
+	+	106	23
 	+	38	0
-	+	39	0
-	+	37	8
-	+	36	16
-	+	37	0
-	+	2	10
+	+	41	31
+	+	59	0
+	+	141	15
+	+	106	17
+	+	135	19
+	+	34	39
 	+	36	0
-	+	37	0
 	+	38	0
-	+	99	10
+	+	34	45
+	+	42	0
+	+	39	36
+	n	59	0
 
-> ~/web-server/cow/templates/main.html
-	*	1526176351	0
-	"	54	19
-	^	53	23
-	.	53	22
-	+	39	0
-	+	32	0
-	+	33	0
-	+	34	0
-	+	35	0
-	+	36	0
-	+	32	27
-	+	33	27
-	+	34	27
-	+	35	27
-	+	36	20
-	+	35	20
-	+	34	20
-	+	33	20
-	+	36	21
-	+	37	27
-	+	29	22
-	+	30	20
-	+	31	20
-	+	32	20
-	+	33	20
-	+	34	20
-	+	35	20
-	+	36	20
-	+	37	20
-	+	29	22
-	+	56	0
-	+	66	0
-	+	56	75
-	+	65	73
-	+	65	8
-	+	53	0
-	+	56	0
-	+	65	0
-	+	54	76
-	+	55	0
-	+	57	0
-	+	65	0
-	+	60	0
-	+	61	74
-	+	63	74
-	+	65	0
-	+	58	0
-	+	52	6
-	+	59	11
-	+	53	22
+> ~/.screenrc
+	*	1527534803	0
+	"	19	0
 
 > ~/sketchbook/darla/darla.ino
-	*	1526175976	0
-	"	375	0
+	*	1527532247	0
+	"	59	0
 	^	297	55
 	.	370	3
 	+	139	0
@@ -627,6 +654,62 @@ $
 	+	370	3
 	a	297	49
 
+> ~/documentation/todo.txt
+	*	1527531940	0
+	"	1	0
+
+> ~/web-server/cow/templates/main.html
+	*	1526176351	0
+	"	54	19
+	^	53	23
+	.	53	22
+	+	39	0
+	+	32	0
+	+	33	0
+	+	34	0
+	+	35	0
+	+	36	0
+	+	32	27
+	+	33	27
+	+	34	27
+	+	35	27
+	+	36	20
+	+	35	20
+	+	34	20
+	+	33	20
+	+	36	21
+	+	37	27
+	+	29	22
+	+	30	20
+	+	31	20
+	+	32	20
+	+	33	20
+	+	34	20
+	+	35	20
+	+	36	20
+	+	37	20
+	+	29	22
+	+	56	0
+	+	66	0
+	+	56	75
+	+	65	73
+	+	65	8
+	+	53	0
+	+	56	0
+	+	65	0
+	+	54	76
+	+	55	0
+	+	57	0
+	+	65	0
+	+	60	0
+	+	61	74
+	+	63	74
+	+	65	0
+	+	58	0
+	+	52	6
+	+	59	11
+	+	53	22
+
 > ~/sketchbook/print_arr.c
 	*	1526174327	0
 	"	11	9
@@ -674,10 +757,6 @@ $
 	+	23	17
 	+	29	18
 	+	31	11
-
-> ~/documentation/todo.txt
-	*	1526162887	0
-	"	1	0
 
 > ~/.bashrc
 	*	1523042016	0

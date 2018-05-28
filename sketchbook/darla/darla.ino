@@ -61,9 +61,9 @@ purposes
 #define SLED		3 
 
 // Secondary motion commands
-#define STOP_MOTION	0
-#define FORWARD		1
-#define REVERSE		2
+#define STOP_MOTION	2
+#define FORWARD		0
+#define REVERSE		1
 
 // Secondary motion pins
 #define MOTOR_INA	7
@@ -272,7 +272,10 @@ void loop() {
 				//Play music if song number is NOT set to 0xff
 				if (scroll[row][SONG] != 0xFF)
 					playMusic(scroll[row][SONG]);
+			
+				//Control secondary motion
 				secondaryMotion(scroll[row][SLED]);
+
 				//Move to WAIT to wait for next row of commands
 				state = WAIT;
 			break;
@@ -354,6 +357,7 @@ void loop() {
 				}
 				else if (inChar == 'V') {
 					Serial.println(sfx.volUp());
+					Serial.println("VUP");
 					state = IDLE;
 				}
 				else if (inChar == 'D') {
