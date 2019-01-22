@@ -19,3 +19,4 @@ Add 8 songs to the interface
 Add main motion
 Try to get rid of the 8 "other"
 Have "save" default to save to the file you opened
+fix the secondary motion on cow
